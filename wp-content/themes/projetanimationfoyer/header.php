@@ -30,8 +30,17 @@ if ( is_user_logged_in() ):
                     alt="Logo">
             </a>
         </div>
-        <div class="header-menu">
-            <?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+        <div class="crm__header__menu">
+        <?php 
+	wp_nav_menu( 
+        array( 
+            'theme_location' => 'main', 
+            'container' => 'ul', 
+            'menu_class' => 'crm__header__menu', 
+        ) 
+    ); 
+?>
         </div>
+        <?php get_search_form(); ?>
 </header>
 <?php wp_body_open(); ?>

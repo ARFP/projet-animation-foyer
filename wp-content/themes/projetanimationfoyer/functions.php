@@ -38,3 +38,15 @@ function crm_register_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'crm_register_assets' );
 
+    // Déclarations des Menu
+register_nav_menus( array(
+	'main' => 'Menu Principal',
+	'footer' => 'Bas de page',
+) );
+
+
+register_sidebar( array(
+	'id' => 'blog-sidebar',
+	'name' => 'Blog',
+) );
+

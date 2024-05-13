@@ -13,8 +13,10 @@
         $title = 'Blog';
     }
 ?>
-<h1><?php echo $title; ?></h1>
 
+<h1 class="crm__heading"><?php echo $title; ?></h1>
+<div class="crm__blog">
+    <main class="crm__content">
 	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
   
 		<article class="post">
@@ -35,6 +37,12 @@
 		</article>
 
 	<?php endwhile; endif; ?>
-
+    </main>
+    <aside class="crm__sidebar">
+        	<ul>
+            	<?php dynamic_sidebar( 'blog-sidebar' ); ?>
+            </ul>
+        </aside>
+        </div>
 <?php get_footer(); ?>
 
