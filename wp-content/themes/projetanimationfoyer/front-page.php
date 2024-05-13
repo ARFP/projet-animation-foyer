@@ -1,4 +1,4 @@
 <?php get_header(); ?>
-	<h1>ARCHIVE</h1>
+	<h1>FRONT-PAGE</h1>
 <?php get_footer(); ?>
 
