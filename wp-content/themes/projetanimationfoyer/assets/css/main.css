@@ -1,0 +1,57 @@
+@import "custom-colors.css";
+
+/* --- HEADER --- */
+
+.top-header {
+    display: flex;
+    justify-content: space-around;
+    font-size: .85rem;
+    background-color: var(--color-theme-primary);
+    color: #FFFFFF;
+    font-family: Sarabun, sans-serif;
+}
+
+.crm-slogan {
+    /* grid-area: 1 / 1 / 2 / 2; */
+}
+
+.log-in-out {
+    /* grid-area: 1 / 2 / 2 / 3; */
+}
+
+    /* HEADER BANNER */
+
+.container-banner {
+    background-color: #FFFFFF;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* MENU PRINCIPAL */
+
+.menu-border-wrapper {
+    background-color: #F5F6F9;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.crm__header__menu {    
+    box-sizing: border-box;
+}
+
+.crm__header__menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.crm__header__menu ul li {
+    list-style-type: none;
+    text-decoration: none;
+}
+.crm__header__menu ul li a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-size: large;
+    color: #17286A;
+}
+

@@ -11,10 +11,16 @@
 <header>
 
     <body <?php body_class(); ?>>
+    <section class="top-header">
+        <div class="crm-slogan">
+            <p>Centre de Réadaptation de Mulhouse, Rééducation et Formation Professionnelle</p>
+        </div>
+        <div class="log-in-out">
         <?php 
 if ( is_user_logged_in() ):
 	$current_user = wp_get_current_user(); 
 ?>
+
         <p>
             <?php echo $current_user->user_firstname; ?>
             <a href="<?php echo wp_logout_url(); ?>"> Déconnexion </a>
@@ -24,12 +30,18 @@ if ( is_user_logged_in() ):
             <a href="<?php echo wp_login_url(); ?>"> Connexion </a>
         </p>
         <?php endif; ?>
-        <div clas="crm-banner">
+        </div>
+        </section>
+        
+        <div class="container-banner">
+        <div class="crm-banner">
             <a href="<?php echo home_url( '/' ); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/logo-centre-de-readaptation-de-mulhouse-colors.svg"
                     alt="Logo">
             </a>
         </div>
+        </div>
+<div class="menu-border-wrapper">
         <div class="crm__header__menu">
         <?php 
 	wp_nav_menu( 
@@ -40,7 +52,9 @@ if ( is_user_logged_in() ):
         ) 
     ); 
 ?>
-        
+        </div>
+        </div>
+        <div class="search-form-tool">
         <?php get_search_form(); ?>
         </div>
 </header>

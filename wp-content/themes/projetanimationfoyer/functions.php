@@ -20,13 +20,9 @@ function crm_register_assets() {
         true
     );
     
-    // Déclarer le fichier style.css à la racine du thème
-    wp_enqueue_style( 
-        'crm',
-        get_stylesheet_uri(), 
-        array(), 
-        '1.0'
-    );
+
+
+    
   	
     // Déclarer le fichier CSS à un autre emplacement
     wp_enqueue_style( 
