@@ -3,8 +3,13 @@
 /* --- HEADER --- */
 
 .top-header {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    /* display: flex;
+    justify-content: space-between; */
     font-size: .85rem;
     background-color: var(--color-theme-primary);
     color: #FFFFFF;
@@ -12,11 +17,12 @@
 }
 
 .crm-slogan {
-    /* grid-area: 1 / 1 / 2 / 2; */
+    grid-area: 1 / 1 / 2 / 3;
+    margin-left: 35px;
 }
 
 .log-in-out {
-    /* grid-area: 1 / 2 / 2 / 3; */
+    grid-area: 1 / 5 / 2 / 6;
 }
 
     /* HEADER BANNER */
