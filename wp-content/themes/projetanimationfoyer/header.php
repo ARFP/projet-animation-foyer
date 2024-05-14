@@ -33,6 +33,7 @@ if ( is_user_logged_in() ):
         </div>
         </section>
         
+        
         <div class="container-banner">
         <div class="crm-banner">
             <a href="<?php echo home_url( '/' ); ?>">
@@ -40,7 +41,11 @@ if ( is_user_logged_in() ):
                     alt="Logo">
             </a>
         </div>
+        <div class="crm-animation-title">
+            <h1>L'Animation au CRM</h1>
         </div>
+        </div>
+       
 <div class="menu-border-wrapper">
         <div class="crm__header__menu">
         <?php 
