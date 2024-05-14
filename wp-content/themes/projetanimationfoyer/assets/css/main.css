@@ -30,12 +30,11 @@
 /* MENU PRINCIPAL */
 
 .menu-border-wrapper {
-    background-color: #F5F6F9;
-    padding-top: 15px;
-    padding-bottom: 15px;
+ 
 }
 
-.crm__header__menu {    
+.crm__header__menu {  
+    background-color: #F5F6F9;
     box-sizing: border-box;
 }
 
@@ -47,6 +46,8 @@
 .crm__header__menu ul li {
     list-style-type: none;
     text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .crm__header__menu ul li a {
     font-family: 'Montserrat', sans-serif;
@@ -55,3 +56,11 @@
     color: #17286A;
 }
 
+#menu-item-75 {
+    background-color: var(--color-theme-secondary);
+   
+}
+
+#menu-item-75 a {
+    color: #FFFFFF;
+}
