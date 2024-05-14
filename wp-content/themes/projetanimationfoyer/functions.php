@@ -31,7 +31,7 @@ function crm_register_assets() {
     // Déclarer le fichier CSS à un autre emplacement
     wp_enqueue_style( 
         'crm', 
-        get_template_directory_uri() . '/css/main.css',
+        get_template_directory_uri() . '/assets/css/main.css',
         array(), 
         '1.0'
     );

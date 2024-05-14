@@ -40,7 +40,8 @@ if ( is_user_logged_in() ):
         ) 
     ); 
 ?>
-        </div>
+        
         <?php get_search_form(); ?>
+        </div>
 </header>
 <?php wp_body_open(); ?>
