@@ -12,7 +12,8 @@
     foreach( $categories as $category ) {
         $args = array(
             'post_type' => 'post',
-            'posts_per_page' => -1,
+			'numberposts' => 1,
+            // 'posts_per_page' => -1,
             'tax_query' => array(
                 array(
                     'taxonomy' => 'category',
@@ -25,7 +26,7 @@
         echo '<h2>' . $category->name. '</h2>';
         echo '<ul>';
         foreach( $posts as $post ) {
-            echo '<li><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></li>';
+            echo '<li><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . the_excerpt() . '</a></li>';
         }
         echo '</ul>';
     } ?>
