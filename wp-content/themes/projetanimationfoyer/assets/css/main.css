@@ -62,6 +62,9 @@
 
 /* MENU PRINCIPAL */
 
+.menu-border-wrapper {
+ 
+}
 
 .crm__header__menu {  
     background-color: #F5F6F9;
@@ -100,18 +103,23 @@
 /* --- FOOTER --- */
 
 .footer-area {
-  
+    margin: 48px 0px 0px;
+    padding: 24px;
     background-color: var(--color-theme-primary);    
 }
 
-.footer-area {
+.footer-area ul {
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
+   
 }
 
 .footer-area ul li {
+   
     list-style-type: none;
     text-decoration: none;
+    margin-right: 15px;
 }
 
 .footer-area ul li a {
