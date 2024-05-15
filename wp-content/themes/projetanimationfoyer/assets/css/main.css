@@ -62,9 +62,6 @@
 
 /* MENU PRINCIPAL */
 
-.menu-border-wrapper {
- 
-}
 
 .crm__header__menu {  
     background-color: #F5F6F9;
@@ -97,5 +94,29 @@
 }
 
 #menu-item-75 a {
+    color: #FFFFFF;
+}
+
+/* --- FOOTER --- */
+
+.footer-area {
+  
+    background-color: var(--color-theme-primary);    
+}
+
+.footer-area {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-area ul li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.footer-area ul li a {
+    font-family: Sarabun, sans-serif;
+    font-size: small;
+    text-decoration: none;
     color: #FFFFFF;
 }
