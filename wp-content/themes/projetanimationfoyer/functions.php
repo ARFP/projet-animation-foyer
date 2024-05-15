@@ -46,32 +46,43 @@ register_sidebar( array(
 	'name' => 'Blog',
 ) );
 
-if ( ! post_password_required() ) {
-    // Code pour afficher les champs personnalisés, comme par exemple :
-    $key_1_value_1 = get_post_meta( $post->ID, 'key_1', true );
-        echo $key_1_value_1;
-}
-function wporg_my_excerpt_protected( $excerpt ) {
-    if ( post_password_required() )
-        $excerpt = '<em>[Protégé par mot de passe]</em>';
-    return $excerpt;
-}
-add_filter( 'the_excerpt', 'wporg_my_excerpt_protected' );
+
+// function wporg_my_excerpt_protected( $excerpt ) {
+//     if ( post_password_required() )
+//         $excerpt = '<em>[Protégé par mot de passe]</em>';
+//     return $excerpt;
+// }
+// add_filter( 'the_excerpt', 'wporg_my_excerpt_protected' );
 
 
-// Masquer les publications protégées
-function wporg_exclude_protected($where) {
-	global $wpdb;
-	return $where .= " AND {$wpdb->posts}.post_password = '' ";
-}
+// // Masquer les publications protégées
+// function wporg_exclude_protected($where) {
+// 	global $wpdb;
+// 	return $where .= " AND {$wpdb->posts}.post_password = '' ";
+// }
 
 // Choisir les fichiers modèles concernés
-function wporg_exclude_protected_action($query) {
-	if( !is_single() && !is_page() && !is_admin() ) {
-		add_filter( 'posts_where', 'wporg_exclude_protected' );
-	}
-}
+// function wporg_exclude_protected_action($query) {
+// 	if( !is_single() && !is_page() && !is_admin() ) {
+// 		add_filter( 'posts_where', 'wporg_exclude_protected' );
+// 	}
+// }
 
 // Ajouter l’action sur le bon crochet d’action
-add_action('pre_get_posts', 'wporg_exclude_protected_action');
+// add_action('pre_get_posts', 'wporg_exclude_protected_action');
+
+
+// function wporg_my_password_form() {
+//     global $post;
+//     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+//     $o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+//     Pour voir cette publication, saisissez le mot de passe :
+//     <label for="' . $label . '">Mot de passe :</label>
+//     <input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" /><input type="submit" name="Submit" value="OK" />
+//     </form>
+//     ';
+//     return $o;
+// }
+// add_filter( 'the_password_form', 'wporg_my_password_form' );
+
 
