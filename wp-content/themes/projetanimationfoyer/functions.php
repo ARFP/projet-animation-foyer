@@ -46,3 +46,32 @@ register_sidebar( array(
 	'name' => 'Blog',
 ) );
 
+if ( ! post_password_required() ) {
+    // Code pour afficher les champs personnalisés, comme par exemple :
+    $key_1_value_1 = get_post_meta( $post->ID, 'key_1', true );
+        echo $key_1_value_1;
+}
+function wporg_my_excerpt_protected( $excerpt ) {
+    if ( post_password_required() )
+        $excerpt = '<em>[Protégé par mot de passe]</em>';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'wporg_my_excerpt_protected' );
+
+
+// Masquer les publications protégées
+function wporg_exclude_protected($where) {
+	global $wpdb;
+	return $where .= " AND {$wpdb->posts}.post_password = '' ";
+}
+
+// Choisir les fichiers modèles concernés
+function wporg_exclude_protected_action($query) {
+	if( !is_single() && !is_page() && !is_admin() ) {
+		add_filter( 'posts_where', 'wporg_exclude_protected' );
+	}
+}
+
+// Ajouter l’action sur le bon crochet d’action
+add_action('pre_get_posts', 'wporg_exclude_protected_action');
+
