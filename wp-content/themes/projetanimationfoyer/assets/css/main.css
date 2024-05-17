@@ -128,3 +128,46 @@
     text-decoration: none;
     color: #FFFFFF;
 }
+
+/* --- TEMPLATES --- */
+
+/* Template Contact */
+
+.contact-container {
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.contact-content {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-left: 80px;
+}
+
+.contact-title {    
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    background-color: var(--color-theme-primary);
+}
+
+.contact-title h1 {
+margin-left: 30px;
+}
+
+#wpforms-135 {
+    font-family: Sarabun, sans-serif;
+ 
+}
+
+.wpforms-field-label {
+    color: var(--color-theme-primary);
+}
+
+button#wpforms-submit-135 {
+background-color: var(--color-theme-secondary);
+font-family: 'Montserrat', sans-serif;
+}
+
