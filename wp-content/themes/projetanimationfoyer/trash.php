@@ -19,3 +19,8 @@
 
 <?php endwhile; endif; ?>
 
+if ( ! post_password_required() ) {
+    echo do_shortcode( '[shiftcontroller4 hideui="filter-calendar,download"]' );
+}
+?>
+
