@@ -1,7 +1,10 @@
 <?php 
-namespace App;
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
 
-use Timber\Timber;
+// Initialize Timber.
+Timber\Timber::init();
+
 
 // Load Composer dependencies.
 // require_once __DIR__ . '/vendor/autoload.php';
@@ -17,6 +20,8 @@ add_theme_support( 'post-thumbnails' );
 
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support( 'title-tag' );
+
+*/
 
 function crm_register_assets() {
     
@@ -105,4 +110,5 @@ register_sidebar( array(
 // }
 // add_filter( 'the_password_form', 'wporg_my_password_form' );
 
-*/
+
+

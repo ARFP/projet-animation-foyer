@@ -11,4 +11,11 @@ return array(
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Projet\\' => array($baseDir . '/src'),
+    'Fantassin\\Core\\WordPress\\' => array($vendorDir . '/fantassin/core/src'),
+    'FantassinCoreWordPressVendor\\Symfony\\Contracts\\Service\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/service-contracts'),
+    'FantassinCoreWordPressVendor\\Symfony\\Component\\Filesystem\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/filesystem'),
+    'FantassinCoreWordPressVendor\\Symfony\\Component\\DependencyInjection\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/dependency-injection'),
+    'FantassinCoreWordPressVendor\\Symfony\\Component\\Config\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/config'),
+    'FantassinCoreWordPressVendor\\Psr\\Container\\' => array($vendorDir . '/fantassin/core/vendor-scoped/psr/container'),
 );

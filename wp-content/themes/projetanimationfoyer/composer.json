@@ -1,5 +1,13 @@
 {
     "require": {
-        "timber/timber": "^2.2"
+        "timber/timber": "^2.2",
+        "fantassin/core": "^3.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Projet\\": "src/"
+        }
+     
     }
 }
