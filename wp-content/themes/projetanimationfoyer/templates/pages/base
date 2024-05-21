@@ -1,0 +1,60 @@
+<!doctype html>
+<html {{ site.language_attributes }}>
+{% block head %}
+	{% include 'head.twig' %}
+{% endblock %}
+
+	<body class="{{body_class}}">
+		{{ function('wp_body_open') }}
+		
+		
+		
+         {% block header %}
+
+         <header>
+         
+             
+                 <section class="top-header">
+                     <div class="crm-slogan">
+                         <p>Centre de Réadaptation de Mulhouse, Rééducation et Formation Professionnelle</p>
+                     </div>
+         
+                 </section>
+         
+                 <div class="container-banner">
+                     <div class="crm-banner">
+                         <a href="<?php echo home_url( '/' ); ?>">
+                             <img src="<?php echo get_template_directory_uri(); ?>/img/logo-centre-de-readaptation-de-mulhouse-colors.svg"
+                                 alt="Logo">
+                         </a>
+                     </div>
+                     <div class="crm-animation-title">
+                         <h1>L'Animation au CRM</h1>
+                     </div>
+                 </div>
+         
+                 {% include "menu.twig" with {'items': menu.get_items} %}
+         
+           
+   
+         
+         {% endblock %}
+		</header>
+
+		<section id="content" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper">
+				{% block content %}
+					
+				{% endblock %}
+			</div>
+		</section>
+
+		{% block footer %}
+			{% include 'footer.twig' %}
+		{% endblock %}
+		{{ function('wp_footer') }}
+		{% do action('get_footer') %}
+	</body>
+</html>
+

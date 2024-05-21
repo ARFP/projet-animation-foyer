@@ -4,12 +4,12 @@ namespace App;
 use Timber\Timber;
 
 // Load Composer dependencies.
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/ProjetAnimationFoyer.php';
+// require_once __DIR__ . '/vendor/autoload.php';
+// require_once __DIR__ . '/src/ProjetAnimationFoyer.php';
 
-Timber::init();
+// Timber::init();
 
-new ProjetAnimationFoyer();
+// new ProjetAnimationFoyer();
 
 /*
 // Ajouter la prise en charge des images mises en avant

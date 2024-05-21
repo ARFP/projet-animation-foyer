@@ -6,6 +6,10 @@
  * @package WordPress
  */
 
+ use Timber\Timber;
+ require_once(__DIR__ .'/vendor/autoload.php');
+ $timber = new Timber();
+
 /**
  * Tells WordPress to load the WordPress theme and output it.
  *

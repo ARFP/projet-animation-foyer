@@ -1,12 +1,11 @@
-<?php get_header(); ?>
+<?php
 
-	<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
-    
-    	<h1><?php the_title(); ?></h1>
-    
-    	<?php the_content(); ?>
+use Timber\PostQuery;
+use Timber\Timber;
 
-	<?php endwhile; endif; ?>
+$context = Timber::get_context();
+$context['POSTS'] = new PostQuery();
 
-<?php get_footer(); ?>
+$templates = ['index.twig'];
 
+Timber::render($templates, $context);
