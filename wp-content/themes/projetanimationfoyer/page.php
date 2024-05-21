@@ -1,4 +1,11 @@
-<?php get_header(); ?>
-	<h1>ARCHIVE</h1>
-<?php get_footer(); ?>
+<?php
+
+namespace App;
+
+use Timber\Timber;
+
+$context = Timber::context();
+$post = $context['post'];
+
+Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
 

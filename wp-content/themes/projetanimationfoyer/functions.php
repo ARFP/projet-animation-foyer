@@ -1,4 +1,15 @@
 <?php 
+namespace App;
+
+use Timber\Timber;
+
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/src/ProjetAnimationFoyer.php';
+
+Timber::init();
+
+new ProjetAnimationFoyer();
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
@@ -18,11 +29,7 @@ function crm_register_assets() {
         array( 'jquery' ), 
         '1.0', 
         true
-    );
-    
-
-
-    
+    );  
   	
     // Déclarer le fichier CSS à un autre emplacement
     wp_enqueue_style( 
@@ -46,6 +53,18 @@ register_sidebar( array(
 	'name' => 'Blog',
 ) );
 
+
+
+
+
+
+
+
+// Initialisation de Timber
+
+// $timber = new \Timber\Timber();
+// \Timber\Timber::$autoescape = false;
+// \Timber\Timber::$dirname = ['templates', 'views'];
 
 // function wporg_my_excerpt_protected( $excerpt ) {
 //     if ( post_password_required() )

@@ -2,13 +2,23 @@
 <html {{ site.language_attributes }}>
 
 <head>
-    <meta charset="{{ site.charset }}">
-   {{ function('wp_head') }}
+   <meta charset="{{ site.charset }}">
+   {% block head %}
+   <title>{{ site.title }}</title>
+   {% endblock %}
 </head>
 
-<body class="{{ body_class }}">
-   
-</body>
-{{ function('wp_footer') }}
-</html>
+< <body>
+   <main>
+      {% block content %}
+      {% endblock %}
+   </main>
 
+   <footer>
+      {% block footer %}
+      <p>Brought to you with ❤ by the Timber.</p>
+      {% endblock %}
+   </footer>
+   </body>
+
+</html>
