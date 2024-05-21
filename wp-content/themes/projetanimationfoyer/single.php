@@ -1,10 +1,12 @@
 <?php
 
+namespace App;
+
+use Timber\Timber;
+
 $context = Timber::context();
-$timber_post = new Timber\Post();
+$post = $context['post'];
 
-$context['post'] = $timber_post;
-
-Timber::render('single.twig');
+	Timber::render(array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single-' . $post->slug . '.twig', 'single.twig'), $context);
 
 

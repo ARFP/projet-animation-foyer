@@ -152,4 +152,27 @@ class ProjetAnimationFoyer extends Site
 
 		return $options;
 	}
+
+    function crm_register_assets() {
+    
+        // Déclarer jQuery
+        wp_enqueue_script('jquery' );
+        
+        // Déclarer le JS
+        wp_enqueue_script( 
+            'crm', 
+            get_template_directory_uri() . '/js/script.js', 
+            array( 'jquery' ), 
+            '1.0', 
+            true
+        );  
+          
+        // Déclarer le fichier CSS à un autre emplacement
+        wp_enqueue_style( 
+            'crm', 
+            get_template_directory_uri() . '/assets/css/main.css',
+            array(), 
+            '1.0'
+        );
+    }
 }

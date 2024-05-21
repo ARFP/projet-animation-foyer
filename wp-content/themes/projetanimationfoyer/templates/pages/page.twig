@@ -1,19 +1,15 @@
-{% extends 'base.twig' %}
+{% extends "base.twig" %}
 
-{% block body %}
-
-<article>
-
-    {% for post in posts %}
-
-    <pre>
-       {{ post.title  }} 
-       {{ post.content }}
-    </pre>
-
-   {% endfor %}}
-
-</article>
-
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-h1">{{post.title}}</h1>
+				<div class="article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+	</div>
 {% endblock %}
 

@@ -1,24 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html {{ site.language_attributes }}>
+{% block head %}
+	{% include 'head.twig' %}
+{% endblock %}
 
-<head>
-   <meta charset="{{ site.charset }}">
-   {% block head %}
-   <title>{{ site.title }}</title>
-   {% endblock %}
-</head>
+	<body class="{{body_class}}">
+		{{ function('wp_body_open') }}
+		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+		<header class="header" >
+			{% block header %}
+				<div class="wrapper">
+					<h1 class="hdr-logo">
+						<a class="hdr-logo-link" href="{{site.url}}">{{site.name}}</a>
+					</h1>
+					<nav id="nav-main" class="nav-main">
+						{% include "menu.twig" with {'items': menu.get_items} %}
+					</nav>
+				</div>
+			{% endblock %}
+		</header>
 
-< <body>
-   <main>
-      {% block content %}
-      {% endblock %}
-   </main>
+		<section id="content" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper">
+				{% block content %}
+					
+				{% endblock %}
+			</div>
+		</section>
 
-   <footer>
-      {% block footer %}
-      <p>Brought to you with ❤ by the Timber.</p>
-      {% endblock %}
-   </footer>
-   </body>
-
+		{% block footer %}
+			{% include 'footer.twig' %}
+		{% endblock %}
+		{{ function('wp_footer') }}
+		{% do action('get_footer') %}
+	</body>
 </html>
+

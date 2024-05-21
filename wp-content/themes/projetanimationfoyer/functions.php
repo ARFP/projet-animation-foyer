@@ -11,6 +11,7 @@ Timber::init();
 
 new ProjetAnimationFoyer();
 
+/*
 // Ajouter la prise en charge des images mises en avant
 add_theme_support( 'post-thumbnails' );
 
@@ -104,4 +105,4 @@ register_sidebar( array(
 // }
 // add_filter( 'the_password_form', 'wporg_my_password_form' );
 
-
+*/
