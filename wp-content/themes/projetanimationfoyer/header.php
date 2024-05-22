@@ -4,5 +4,5 @@ namespace Projet;
 
 use Timber\Timber;
 
-$GLOBALS['timberContext'] = Timber::get_context();
+$GLOBALS['timberContext'] = Timber::context();
 ob_start();
