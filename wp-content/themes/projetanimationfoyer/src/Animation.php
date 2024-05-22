@@ -1,20 +1,36 @@
 <?php
 
-namespace Projet;
+// namespace Projet;
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+require_once __DIR__ . '/vendor/autoload.php';
 
-use fantassin\core\WordPress\HasHooks;
-// use Timber\Menu;
-use Timber\Theme as TimberTheme;
+use Timber\Site;
 
-class Animation extends TimberTheme implements HasHooks {
+/**
+ * Class Animation
+ */
+class Animation extends Site {
 	
 	public function __construct() {
-		parent::__construct( slug: 'projetanimationfoyer' );
+		add_theme_support('post-formats');
+		add_theme_support('post-thumbnails');
+		add_theme_support('menus');
+		add_filter('timber_context', array($this, 'add_to_context'));
+		add_filter('get_twig', array($this, 'add_to_twig'));
+		add_action('init', array($this, 'register_post_types'));
+		add_action('init', array($this, 'register_taxonomies'));
+		parent::__construct();
 	}
-	public function hooks() {
-		add_filter('timber/context', [$this, 'add_to_context']);
+	/*
+	function add_to_context($context) {
+		$context['menu'] = new Timber\Menu();
+		$context['site'] = $this;
+		return $context;
+	}*/
+
+
 }
-	public function add_to_context($context) {
-		var_dump($context);
-	}
-}
+
+new Animation();
