@@ -1,13 +1,8 @@
 <?php
 
-namespace App;
+namespace Projet;
 
 use Timber\Timber;
 
-$templates = array('base.twig');
-
-$context = Timber::context([
-	'title' => $title,
-]);
-
-Timber::render($templates, $context);
+$GLOBALS['timberContext'] = Timber::get_context();
+ob_start();

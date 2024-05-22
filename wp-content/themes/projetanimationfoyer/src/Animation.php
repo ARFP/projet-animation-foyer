@@ -3,9 +3,10 @@
 namespace Projet;
 
 use fantassin\core\WordPress\HasHooks;
+// use Timber\Menu;
 use Timber\Theme as TimberTheme;
 
-class Animation extends TimberTheme implements HasHooks{
+class Animation extends TimberTheme implements HasHooks {
 	
 	public function __construct() {
 		parent::__construct( slug: 'projetanimationfoyer' );

@@ -1,18 +1,23 @@
 <?php 
+
+namespace Projet;
+
+use Projet\Animation;
+use Timber\Timber;
+
+// $timber = new Timber();
+// $theme = new Animation();
+
+// $container = new Container(Timber::class);
+
+
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
-
+require_once __DIR__ . '/src/Animation.php';
 // Initialize Timber.
-Timber\Timber::init();
+Timber::init();
 
-
-// Load Composer dependencies.
-// require_once __DIR__ . '/vendor/autoload.php';
-// require_once __DIR__ . '/src/ProjetAnimationFoyer.php';
-
-// Timber::init();
-
-// new ProjetAnimationFoyer();
+new Animation();
 
 /*
 // Ajouter la prise en charge des images mises en avant
