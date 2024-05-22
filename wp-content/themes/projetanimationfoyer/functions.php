@@ -1,9 +1,12 @@
 <?php 
 
 namespace Projet;
-
-use Projet\Animation;
 use Timber\Timber;
+// Load Composer dependencies.
+require_once __DIR__ . '/vendor/autoload.php';
+// require_once __DIR__ . '/src/Animation.php';
+
+
 
 // $timber = new Timber();
 // $theme = new Animation();
@@ -11,9 +14,7 @@ use Timber\Timber;
 // $container = new Container(Timber::class);
 
 
-// Load Composer dependencies.
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/Animation.php';
+
 // Initialize Timber.
 Timber::init();
 
@@ -27,7 +28,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'title-tag' );
 
 */
-
+/*
 function crm_register_assets() {
     
     // Déclarer jQuery
@@ -62,7 +63,7 @@ register_nav_menus( array(
 register_sidebar( array(
 	'id' => 'blog-sidebar',
 	'name' => 'Blog',
-) );
+) );*/
 
 
 
