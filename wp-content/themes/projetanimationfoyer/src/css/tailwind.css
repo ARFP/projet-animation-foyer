@@ -1,0 +1,17 @@
+/*
+Theme Name: projet animation foyer
+Theme URI: http://http://localhost/projet-animation-foyer/
+Author: Olivier Dal Ferro
+Author URI: https://github.com/oZagreuso
+Description: Création du site web des animations et du foyer du CRM de Mulhouse
+Requires at least: WordPress 6.4
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.htmlLicense: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: projetanimationfoyer
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
