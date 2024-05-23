@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "post css src/css/tailwind.css -o style.css"
+    "build": "postcss src/css/tailwind.css -o style.css"
   },
   "keywords": [],
   "author": "",
