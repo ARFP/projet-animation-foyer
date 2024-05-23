@@ -1,7 +1,9 @@
 {
     "require": {
         "timber/timber": "^2.2",
-        "fantassin/core": "^3.1"
+        "fantassin/core": "^3.1",
+        "symfony/asset": "^7.0",
+        "symfony/twig-pack": "^1.0"
     },
 
     "autoload": {
