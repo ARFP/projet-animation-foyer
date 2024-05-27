@@ -1,60 +1,6 @@
 {
     "packages": [
         {
-            "name": "fantassin/core",
-            "version": "3.1.0",
-            "version_normalized": "3.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://gitlab.com/bazooka/core.git",
-                "reference": "7ed7eba58a49269248a9df423e08ccf66abecf17"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://gitlab.com/api/v4/projects/bazooka%2Fcore/repository/archive.zip?sha=7ed7eba58a49269248a9df423e08ccf66abecf17",
-                "reference": "7ed7eba58a49269248a9df423e08ccf66abecf17",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.3",
-                "symfony/polyfill-php80": "^1.24"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4",
-                "phpunit/phpunit": "^9.5",
-                "psr/container": "1.1.1",
-                "symfony/config": "^5.3",
-                "symfony/dependency-injection": "^5.3",
-                "symfony/filesystem": "^5.3",
-                "symfony/service-contracts": "^2.4"
-            },
-            "time": "2022-05-06T08:46:17+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Fantassin\\Core\\WordPress\\": "src",
-                    "FantassinCoreWordPressVendor\\Psr\\Container\\": "vendor-scoped/psr/container/",
-                    "FantassinCoreWordPressVendor\\Symfony\\Component\\Config\\": "vendor-scoped/symfony/config/",
-                    "FantassinCoreWordPressVendor\\Symfony\\Contracts\\Service\\": "vendor-scoped/symfony/service-contracts/",
-                    "FantassinCoreWordPressVendor\\Symfony\\Component\\Filesystem\\": "vendor-scoped/symfony/filesystem/",
-                    "FantassinCoreWordPressVendor\\Symfony\\Component\\DependencyInjection\\": "vendor-scoped/symfony/dependency-injection/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Florian Truchot",
-                    "email": "florian@fantassin.fr"
-                }
-            ],
-            "support": {
-                "issues": "https://gitlab.com/bazooka/core/-/issues",
-                "source": "https://gitlab.com/bazooka/core/-/tree/3.1.0"
-            },
-            "install-path": "../fantassin/core"
-        },
-        {
             "name": "psr/cache",
             "version": "3.0.0",
             "version_normalized": "3.0.0.0",

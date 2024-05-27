@@ -39,10 +39,4 @@ return array(
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
     'Projet\\' => array($baseDir . '/src'),
-    'Fantassin\\Core\\WordPress\\' => array($vendorDir . '/fantassin/core/src'),
-    'FantassinCoreWordPressVendor\\Symfony\\Contracts\\Service\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/service-contracts'),
-    'FantassinCoreWordPressVendor\\Symfony\\Component\\Filesystem\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/filesystem'),
-    'FantassinCoreWordPressVendor\\Symfony\\Component\\DependencyInjection\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/dependency-injection'),
-    'FantassinCoreWordPressVendor\\Symfony\\Component\\Config\\' => array($vendorDir . '/fantassin/core/vendor-scoped/symfony/config'),
-    'FantassinCoreWordPressVendor\\Psr\\Container\\' => array($vendorDir . '/fantassin/core/vendor-scoped/psr/container'),
 );

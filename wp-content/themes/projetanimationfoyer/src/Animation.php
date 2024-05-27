@@ -8,6 +8,8 @@ namespace Projet;
 use Timber\Timber;
 use Timber\Site;
 use Timber\Menu;
+use Twig\Extension\StringLoaderExtension;
+use Twig\TwigFilter;
 
 
 class Animation extends Site {
@@ -39,7 +41,7 @@ class Animation extends Site {
 			$context['foo'] = 'bar';
 			$context['stuff'] = 'I am a value set in your functions.php file';
 			$context['notes'] = 'These values are available everytime you call Timber::context();';
-			$context['menu'] = new Timber\Menu();
+			$context['menu']  = Timber::get_menu();
 			$context['site'] = $this;
 			return $context;
 		}
@@ -109,9 +111,16 @@ class Animation extends Site {
 		 *
 		 * @param string $twig get extension.
 		 */
-		public function add_to_twig( $twig ) {
-			$twig->addExtension( new Twig_Extension_StringLoader() );
-			$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		public function add_to_twig($twig)
+		{
+			/**
+			 * Required when you want to use Twig’s template_from_string.
+			 * @link https://twig.symfony.com/doc/3.x/functions/template_from_string.html
+			 */
+			// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
+	
+			$twig->addFilter(new TwigFilter('myfoo', [$this, 'myfoo']));
+	
 			return $twig;
 		}
 }

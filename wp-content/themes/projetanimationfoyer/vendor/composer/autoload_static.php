@@ -62,15 +62,6 @@ class ComposerStaticInit71fa54f8ead869b9d6b89befb86db61f
             'Psr\\Cache\\' => 10,
             'Projet\\' => 7,
         ),
-        'F' => 
-        array (
-            'Fantassin\\Core\\WordPress\\' => 25,
-            'FantassinCoreWordPressVendor\\Symfony\\Contracts\\Service\\' => 55,
-            'FantassinCoreWordPressVendor\\Symfony\\Component\\Filesystem\\' => 58,
-            'FantassinCoreWordPressVendor\\Symfony\\Component\\DependencyInjection\\' => 67,
-            'FantassinCoreWordPressVendor\\Symfony\\Component\\Config\\' => 54,
-            'FantassinCoreWordPressVendor\\Psr\\Container\\' => 43,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -205,30 +196,6 @@ class ComposerStaticInit71fa54f8ead869b9d6b89befb86db61f
         'Projet\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
-        ),
-        'Fantassin\\Core\\WordPress\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/src',
-        ),
-        'FantassinCoreWordPressVendor\\Symfony\\Contracts\\Service\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/vendor-scoped/symfony/service-contracts',
-        ),
-        'FantassinCoreWordPressVendor\\Symfony\\Component\\Filesystem\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/vendor-scoped/symfony/filesystem',
-        ),
-        'FantassinCoreWordPressVendor\\Symfony\\Component\\DependencyInjection\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/vendor-scoped/symfony/dependency-injection',
-        ),
-        'FantassinCoreWordPressVendor\\Symfony\\Component\\Config\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/vendor-scoped/symfony/config',
-        ),
-        'FantassinCoreWordPressVendor\\Psr\\Container\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fantassin/core/vendor-scoped/psr/container',
         ),
     );
 
