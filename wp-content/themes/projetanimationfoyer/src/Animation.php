@@ -51,6 +51,15 @@ class Animation extends Site {
 			return $context;
 		}
 	
+		public function extend_context( $context ) {
+			// Appel de la méthode parente pour inclure le contexte existant
+			$context = parent::add_to_context( $context );
+	
+			// Construire l'URL de l'image
+			$context['logo_url'] = get_stylesheet_directory_uri() . '/views/img/crmlogo1.jpg';
+	
+			return $context;
+		}
 		public function theme_supports() {
 			// Add default posts and comments RSS feed links to head.
 			add_theme_support( 'automatic-feed-links' );
