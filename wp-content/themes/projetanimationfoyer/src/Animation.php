@@ -10,6 +10,7 @@ use Timber\Site;
 use Timber\Menu;
 use Twig\Extension\StringLoaderExtension;
 use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 
 class Animation extends Site {
@@ -24,6 +25,8 @@ class Animation extends Site {
 			add_action( 'init', array( $this, 'register_taxonomies' ) );
 			parent::__construct();
 		}
+
+		
 		/** This is where you can register custom post types. */
 		public function register_post_types() {
 	
@@ -32,6 +35,7 @@ class Animation extends Site {
 		public function register_taxonomies() {
 	
 		}
+
 		
 	
 		/** This is where you add some context
@@ -121,8 +125,16 @@ class Animation extends Site {
 			// $twig->addExtension( new Twig\Extension\StringLoaderExtension() );
 	
 			$twig->addFilter(new TwigFilter('myfoo', [$this, 'myfoo']));
+			
+			// Add your custom function enqueue_style to Twig
+			$enqueue_style = new TwigFunction('enqueue_style', function ($handle, $src) {
+				wp_enqueue_style( $handle, get_stylesheet_directory_uri() . '/assets/css/tailwind.css' . $src );
+			});
+	
+			$twig->addFunction($enqueue_style);
 	
 			return $twig;
 		}
+
 }
 

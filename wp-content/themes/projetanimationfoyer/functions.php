@@ -2,22 +2,15 @@
 
 namespace Projet;
 use Timber\Timber;
+
 // Load Composer dependencies.
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/Animation.php';
 
-
-
-// $timber = new Timber();
-// $theme = new Animation();
-
-// $container = new Container(Timber::class);
-
-
-
 // Initialize Timber.
 Timber::init();
 
+//Instancier la classe Animation
 new Animation();
 
 /*

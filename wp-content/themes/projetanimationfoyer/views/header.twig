@@ -1,9 +1,8 @@
 
 <header  class="bg-slate-500">
 {% block header %}
-<h1>HEADER</h1>
     <section class="top-header">
-        <div class="bg-slate-400">
+        <div class="crm-slogan">
             <p>Centre de Réadaptation de Mulhouse, Rééducation et Formation Professionnelle</p>
         </div>
 
@@ -12,7 +11,8 @@
     <div class="container-banner">
         <div class="crm-banner">
             <a href="<?php echo home_url( '/' ); ?>">
-                <img src=""alt="Logo">
+                <img src="{{ logo.src }}"
+                    alt="Logo">
                     
             </a>
         </div>
@@ -20,7 +20,12 @@
             <h1>L'Animation au CRM</h1>
         </div>
     </div>
-
-    {# {% include "menu.twig" with {'items': menu.get_items} %} #}
+    <div class="menu-border-wrapper">
+        <div class="crm__header__menu">
+     {% include 'parts/menu.twig' with { items: menu.get_items } %}
+        </div>
+        </div>
+ 
+    
 {% endblock %}
 </header>
