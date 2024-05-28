@@ -1,8 +1,9 @@
 
 <header  class="bg-slate-500">
+{% block header %}
 <h1>HEADER</h1>
     <section class="top-header">
-        <div>
+        <div class="bg-slate-400">
             <p>Centre de Réadaptation de Mulhouse, Rééducation et Formation Professionnelle</p>
         </div>
 
@@ -21,5 +22,5 @@
     </div>
 
     {# {% include "menu.twig" with {'items': menu.get_items} %} #}
-
+{% endblock %}
 </header>

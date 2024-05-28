@@ -1,1 +1,17 @@
 {% extends 'base.twig' %}
+
+{% block content %}
+
+{% for post in posts %}
+<div>
+    <a href="{{ post.link }}">{{ post.title }}</a>
+</div>
+{% endfor %}
+
+{% for page in pages %}
+<div>
+    <a href="{{ page.link }}">{{ page.title }}</a>
+</div>
+{% endfor %}
+
+{% endblock %}

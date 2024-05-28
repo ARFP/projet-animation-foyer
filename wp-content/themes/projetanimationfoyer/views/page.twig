@@ -1,14 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div>
+<h2 class="ti">{{ post.title }}</h2>
+			<p class="font-italic">by {{ post.author }}, {{ post.date }}</p>
+			<div>{{ post.content }}</div>
+			<h2 class="hhh">Variable examples</h2>
+			<p>For more information visit <a href="https://timber.github.io/docs/">Timber Docs</a></p>
 {% endblock %}

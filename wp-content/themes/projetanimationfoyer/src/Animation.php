@@ -32,6 +32,7 @@ class Animation extends Site {
 		public function register_taxonomies() {
 	
 		}
+		
 	
 		/** This is where you add some context
 		 *
@@ -41,7 +42,7 @@ class Animation extends Site {
 			$context['foo'] = 'bar';
 			$context['stuff'] = 'I am a value set in your functions.php file';
 			$context['notes'] = 'These values are available everytime you call Timber::context();';
-			$context['menu']  = Timber::get_menu();
+			$context['menu']  = Timber::get_menu('Menu Principal');
 			$context['site'] = $this;
 			return $context;
 		}
@@ -125,5 +126,3 @@ class Animation extends Site {
 		}
 }
 
-
-// new Animation();

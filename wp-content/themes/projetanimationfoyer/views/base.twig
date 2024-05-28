@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang={{ site.language_attributes }}>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <title>Document</title>
-</head>
+{% block head %}
+{% include 'head.twig' %}
+{% endblock %}
 
-<body data-template="base.twig">
-    <header class="bg-slate-500">
-        {% include 'header.twig' %}
-    </header>
+<body class="{{body_class}}">
 
-    <main class="content">
-        {% block content %}
+    {% include 'header.twig' %}  
 
-        {% endblock %}
-    </main>
+    {% block content %}
 
-    <footer class="footer">
-  {% include 'footer.twig' %}
-    </footer>
+    {% endblock %}
+
+    {% include 'footer.twig' %}
 
 </body>
 
