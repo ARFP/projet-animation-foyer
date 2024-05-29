@@ -90,13 +90,12 @@
     margin-left: 5px;
     margin-right: 5px;
 }
-
-#menu-item-75 {
+body > header > div.menu-border-wrapper > div > nav > ul > li.nav-main-item.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-75 {
     background-color: var(--color-theme-secondary);
-   
+    
 }
 
-#menu-item-75 a {
+body > header > div.menu-border-wrapper > div > nav > ul > li.nav-main-item.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-75 a {
     color: #FFFFFF;
 }
 
