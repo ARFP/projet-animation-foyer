@@ -1,0 +1,7 @@
+<article class="tease tease-{{ post.type }}" id="tease-{{ post.ID }}">
+    <h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+    <p>{{ post.excerpt }}</p>
+    {% if post.thumbnail.src %}
+        <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+    {% endif %}
+</article>

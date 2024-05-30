@@ -1,5 +1,13 @@
-{% extends "index.twig" %}
+{% extends "base.twig" %}
 
 {% block content %}
-  <h1>ARCHIVES</h1>
+    {% if posts is not empty %}
+        <ul>
+            {% for post in posts %}
+                <li>{{ include('parts/teaser.twig') }}</li>
+            {% endfor %}
+        <ul>
+    {% endif %}
+
+    {# {{ include('pagination.twig') }} #}
 {% endblock %}

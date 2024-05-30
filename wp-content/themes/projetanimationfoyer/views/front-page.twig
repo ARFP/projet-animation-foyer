@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <h1>FRONT</h1>
+    {% if latest_posts_by_category %}
+        <ul>
+            {% for category_slug, post in latest_posts_by_category %}
+                <li>
+                    {% include 'parts/teaser.twig' with {'post': post} %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

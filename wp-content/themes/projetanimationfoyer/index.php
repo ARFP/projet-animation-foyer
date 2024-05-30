@@ -4,7 +4,7 @@ namespace Projet;
 
 use Timber\Timber;
 
-$templates = array('templates/index.twig');
+$templates = array('templates/posts/index.twig');
 
 if (is_home()) {
 	array_unshift( $templates, 'templates/front-page.twig', 'templates/home.twig' );
