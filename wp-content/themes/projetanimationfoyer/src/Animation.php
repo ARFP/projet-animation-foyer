@@ -128,6 +128,16 @@ class Animation extends Site {
         return $twig;
     }
 
+	public function resize_image($image, $width, $height) {
+		// Redimensionner l'image
+		$resized_image = $image->resize($width, $height);
+	
+		// Renvoyer l'objet Image redimensionné
+		return $resized_image;
+	}
+	
+	
+
     public function myfoo( $text ) {
         $text .= ' bar!';
         return $text;

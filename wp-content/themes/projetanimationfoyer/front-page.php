@@ -28,6 +28,4 @@ $context['latest_posts_by_category'] = $latest_posts_by_category;
 
 Timber::render(array('front-page.twig'), $context);
 
-
-// Afficher le contenu de $latest_posts_by_category pour vérification
 // var_dump($latest_posts_by_category);

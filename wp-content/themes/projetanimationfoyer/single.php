@@ -5,11 +5,11 @@ namespace Projet;
 use Timber\Timber;
 
 $context = Timber::context();
-$timber_post = Timber::query_post();
-$context['post'] = $timber_post;
+$post = $context['post'];
+$templates = array('templates/single-' . $post->post_type . '.twig', 'posts/single-post.twig');
 
-Timber::render( array( 'posts/single-' . $timber_post->ID . '.twig', 
-						'posts/single-' . $timber_post->post_type . '.twig', 
-						'posts/single.twig' ), $context );
-						
+// if (post_password_required($post->ID)) {
+// 	$templates = 'templates/single-password.twig';
+// } 
 
+Timber::render($templates, $context);

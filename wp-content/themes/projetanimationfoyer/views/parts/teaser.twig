@@ -1,7 +1,17 @@
-<article class="tease tease-{{ post.type }}" id="tease-{{ post.ID }}">
+{# parts/teaser.twig #}
+{# <article class="tease tease-{{ post.type }}" id="tease-{{ post.ID }}"> #}
     <h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
-    <p>{{ post.excerpt }}</p>
-    {% if post.thumbnail.src %}
-        <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
-    {% endif %}
-</article>
+    <div class="thumbnail">
+        {% if post.thumbnail %}
+             {# Récupérer l'objet Timber\Image pour l'image miniature #}
+            {# {% set thumbnail_image = post.thumbnail %} #}
+            {# Redimensionner l'image miniature à une taille spécifique #}
+            {# {% set resized_thumbnail = thumbnail_image.src | resize(250, 150) %} #}
+           <img src="{{ post.thumbnail.src|resize(250, 150) }}" alt="{{ post.title }}">          
+        {% endif %}
+    </div>
+    <div class="excerpt">
+        {{ post.excerpt }}
+    </div>
+{# </article> #}
+
