@@ -13,12 +13,57 @@ class Animation extends Site {
 	
     public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_custom_styles' ) ); // Appel dans le bon crochet
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_custom_styles' ) ); 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		// Ajout des hooks
+		add_action('init', [$this, 'clear_all_transients']);
+        add_action('wp_loaded', [$this, 'setup_front_page_context']);
 	}
+
+	public function clear_all_transients() {
+        global $wpdb;
+        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_%'");
+        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_site_transient_%'");
+    }
+
+	// Méthode pour configurer le contexte de la page d'accueil
+    public function setup_front_page_context() {
+        if (is_front_page()) {
+            $context = Timber::context();
+            $post = $context['post'];
+
+            // Récupérer les catégories
+            $categories = get_categories();
+
+            // Récupérer les derniers articles de chaque catégorie
+            $latest_posts_by_category = array();
+            foreach ($categories as $category) {
+                $args = array(
+                    'posts_per_page' => 1,
+                    'category_name' => $category->slug, // Utilisation du slug de la catégorie
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                );
+                $latest_posts = Timber::get_posts($args);
+                if (!empty($latest_posts)) {
+                    $latest_posts_by_category[$category->slug] = $latest_posts[0];
+                }
+            }
+
+            // Afficher le contenu de $latest_posts_by_category pour vérification
+            error_log(print_r($latest_posts_by_category, true));
+
+            $context['latest_posts_by_category'] = $latest_posts_by_category;
+
+            Timber::render(array('page-' . $post->post_name . '.twig', 'front-page.twig'), $context);
+        }
+    }
+
+    // Ajoutez d'autres méthodes de votre classe Animation ici...
+
 
     public function register_post_types() {
         // Définissez ici vos types de contenu personnalisés si nécessaire
