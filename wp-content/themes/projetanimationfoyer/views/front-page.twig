@@ -1,10 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <h3>FRONT</h3>
+    <section class="top-page">
+     <h1 class="article-h1">{{ post.title }}</h1>
+    </section>
+    <div class="front-article">
     {% if latest_posts_by_category %}
         <ul>
-            {% for category_slug, post in latest_posts_by_category %}
+            {% for category_slug, post in latest_posts_by_category %}            
                 <li>
                     {# <article class="tease tease-{{ post.type }}" id="tease-{{ post.ID }}"> #}
                         {# <h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2> #}
@@ -14,4 +17,5 @@
             {% endfor %}
         </ul>
     {% endif %}
+    </div>
 {% endblock %}
