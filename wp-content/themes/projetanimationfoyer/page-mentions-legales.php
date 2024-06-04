@@ -1,12 +1,11 @@
-<?php get_header(); ?>
+<?php
 
-<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+namespace Projet;
 
-<h2><?php the_title(); ?></h2>
+use Timber\Timber;
 
-<?php the_content(); ?>
+$context = Timber::context();
+$post = $context['post'];
 
-<?php endwhile; endif; ?>
-
-<?php get_footer(); ?>
+Timber::render(array('page-' . $post->post_name . '.twig', 'page-mentions-legales.twig'), $context);
 

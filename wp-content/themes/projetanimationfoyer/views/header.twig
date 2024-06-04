@@ -1,6 +1,5 @@
-
-<header  class="bg-slate-500">
-{% block header %}
+<header class="bg-slate-500">
+    {% block header %}
     <section class="top-header">
         <div class="crm-slogan">
             <p>Centre de Réadaptation de Mulhouse, Rééducation et Formation Professionnelle</p>
@@ -11,9 +10,8 @@
     <div class="container-banner">
         <div class="crm-banner">
             <a href="{{ home_url('/') }}">
-                <img src="{{ logo_url }}"
-                    alt="Logo">
-                    
+                <img src="{{ logo_url }}" alt="Logo">
+
             </a>
         </div>
         <div class="crm-animation-title">
@@ -22,10 +20,9 @@
     </div>
     <div class="menu-border-wrapper">
         <div class="crm__header__menu">
-     {% include 'parts/menu.twig' with { items: menu.get_items } %}
+            {% include 'parts/menu.twig' with { items: menu.get_items } %}
         </div>
-        </div>
- 
-    
-{% endblock %}
+    </div>
+
+    {% endblock %}
 </header>

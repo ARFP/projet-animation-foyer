@@ -1,13 +1,14 @@
-<?php get_header(); ?>
-<h1>Contact</h1>
+<?php
 
-<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+namespace Projet;
 
-<h2><?php the_title(); ?></h2>
+use Timber\Timber;
 
-<?php the_content(); ?>
+$context = Timber::context();
+$post = $context['post'];
 
-<?php endwhile; endif; ?>
+Timber::render(array('page-' . $post->post_name . '.twig', 'page-contact.twig'), $context);
 
-<?php get_footer(); ?>
-
+if (function_exists('wp_nonce_field')) {
+    $context['nonce_field'] = wp_nonce_field('contact_form', '_wpnonce', true, false);
+}

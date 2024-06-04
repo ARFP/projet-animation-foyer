@@ -1,8 +1,10 @@
-<?php get_header(); ?>
-<h1>planning</h1>
+<?php
 
-<?php echo do_shortcode( '[shiftcontroller4]' ); ?>
+namespace Projet;
 
+use Timber\Timber;
 
-<?php get_footer(); ?>
+$context = Timber::context();
+$post = $context['post'];
 
+Timber::render(array('page-' . $post->post_name . '.twig', 'page-planning.twig'), $context);

@@ -132,10 +132,10 @@ class Animation extends Site {
 		
         }));
 		$twig->addExtension(new StringLoaderExtension());
-    $twig->addFunction(new TwigFunction('do_shortcode', 'do_shortcode'));
-  
+        $twig->addFunction(new TwigFunction('do_shortcode', 'do_shortcode')); 
+        // Ajouter un log pour confirmer l'ajout
+        error_log('do_shortcode function added to Twig');
 		
-	
         return $twig;
     }
 
@@ -157,8 +157,8 @@ class Animation extends Site {
     //     $context = $this->add_teaser_context($post_id);
     //     Timber::render('parts/teaser.twig', $context);
     // }
-	
-	
+
+    
 
     public function myfoo( $text ) {
         $text .= ' bar!';
