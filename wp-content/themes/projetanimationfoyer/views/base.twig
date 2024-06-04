@@ -9,7 +9,9 @@
     {{ function('wp_body_open') }}
 
     <header>
+    {{% block header %}}
         {% include 'header.twig' %}
+        {{% endblock %}}
     </header>
 
     <div id="content">

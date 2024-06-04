@@ -123,18 +123,34 @@ class Animation extends Site {
         $twig->addFilter(new TwigFilter('myfoo', [$this, 'myfoo']));
 		$twig->addFunction(new TwigFunction('home_url', function() {
             return home_url();
+		
         }));
-
+		$twig->addExtension(new StringLoaderExtension());
+    $twig->addFunction(new TwigFunction('do_shortcode', 'do_shortcode'));
+  
+		
+	
         return $twig;
     }
 
-	public function resize_image($image, $width, $height) {
-		// Redimensionner l'image
-		$resized_image = $image->resize($width, $height);
-	
-		// Renvoyer l'objet Image redimensionné
-		return $resized_image;
-	}
+    // public function add_teaser_context($post_id) {
+    //     $context = Timber::context();
+
+    //     // Utilisez get_post_thumbnail_id pour récupérer l'ID de l'image mise en avant
+    //     $thumbnail_id = get_post_thumbnail_id($post_id);
+    //     if ($thumbnail_id) {
+    //         // Chargez l'image via Timber et redimensionnez-la
+    //         $context['teaser_image'] = new Timber\Image($thumbnail_id);
+    //         $context['teaser_image_resized'] = $context['teaser_media'].resize(300, 200);  // Assurez-vous que la redimension est toujours disponible
+    //     }
+
+    //     return $context;
+    // }
+
+    // public function render_teaser($post_id) {
+    //     $context = $this->add_teaser_context($post_id);
+    //     Timber::render('parts/teaser.twig', $context);
+    // }
 	
 	
 

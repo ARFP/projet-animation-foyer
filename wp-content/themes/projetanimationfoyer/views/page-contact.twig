@@ -1,2 +1,7 @@
-{% extends 'index.twig' %}
+{% extends 'base.twig' %}
 
+{% block content %}
+ <div class="contact_form">
+    {{ wp.do_shortcode('[wpforms id="135"]') }}
+    </div>
+{% endblock %}
