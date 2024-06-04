@@ -13,6 +13,7 @@ class Animation extends Site {
 	
     public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts')); //test js
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_custom_styles' ) ); 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -117,6 +118,11 @@ class Animation extends Site {
 		wp_enqueue_style( 'main-style', get_stylesheet_directory_uri() . '/assets/css/main.css' );
 	}
 	
+    function enqueue_scripts() {
+        wp_enqueue_script('internal-script', '/assets/js/main.js', array(), '1.0.0', true);
+      }
+      
+      
 
     public function add_to_twig($twig) {
         // Ajoutez vos filtres et fonctions Twig personnalisés ici

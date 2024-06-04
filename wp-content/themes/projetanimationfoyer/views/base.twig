@@ -2,16 +2,16 @@
 <html lang="{{ site.language_attributes }}">
 
 {% block head %}
-    {% include 'head.twig' %}
+    {% include 'head.twig' %}    
 {% endblock %}
 
 <body class="{{ body_class }}">
     {{ function('wp_body_open') }}
 
     <header>
-    {{% block header %}}
+    {% block header %}
         {% include 'header.twig' %}
-        {{% endblock %}}
+        {% endblock %}
     </header>
 
     <div id="content">
