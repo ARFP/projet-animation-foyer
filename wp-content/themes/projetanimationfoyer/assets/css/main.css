@@ -102,7 +102,7 @@ color: #FFFFFF;
 /* --- FOOTER --- */
 
 .footer-area {
-margin: 48px 0px 0px;
+margin: 0px 0px 0px;
 padding: 24px;
 background-color: var(--color-theme-primary);
 }
@@ -269,6 +269,60 @@ line-height: 3.25rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2.625rem;
-    line-height: 3.25rem;
-    
+    line-height: 3.25rem;    
+
     }
+
+    .article-body > figure{
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .article-body > h2 {
+        display: flex;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        font-size: medium;
+
+    }
+
+    /* page-planning */
+
+    .top-planning {
+        background-color: #17286A;
+        color: #FFFFFF;
+        padding: 4rem 0 5rem;
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 2.625rem;
+        line-height: 3.25rem;    
+    
+        }
+
+        /* -- Page News -- */
+
+        .top-news {
+            background-color: #17286A;
+            color: #FFFFFF;
+            padding: 4rem 0 5rem;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.625rem;
+            line-height: 3.25rem;    
+        
+            }
+          
+            
+        
+        
