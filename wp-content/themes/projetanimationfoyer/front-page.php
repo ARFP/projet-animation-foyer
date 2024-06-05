@@ -14,7 +14,7 @@ $latest_posts_by_category = array();
 foreach ($categories as $category) {
     $args = array(
         'posts_per_page' => 1,
-        'category_name' => $category->slug, // Utilisation du slug de la catégorie
+        'category_name' => $category->slug, 
         'orderby' => 'date',
         'order' => 'DESC',
     );

@@ -219,3 +219,9 @@ article-h1 h1 {
 .front-article ul li a {
     text-decoration: none;
 }
+
+/* -- parts/teaser.twig -- */
+
+.tease h2 a {
+    color: var(--color-theme-primary);
+}

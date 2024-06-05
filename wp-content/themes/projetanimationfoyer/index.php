@@ -4,10 +4,10 @@ namespace Projet;
 
 use Timber\Timber;
 
-$templates = array('templates/posts/index.twig');
+$templates = array('views/index.twig');
 
 if (is_home()) {
-	array_unshift( $templates, 'templates/front-page.twig', 'templates/home.twig' );
+	array_unshift( $templates, 'views/front-page.twig', 'view/home.twig' );
 }
 
 $context = Timber::context([
