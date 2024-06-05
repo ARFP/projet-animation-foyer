@@ -22,7 +22,7 @@ class Animation extends Site {
 		// Ajout des hooks
 		add_action('init', [$this, 'clear_all_transients']);
         add_action('wp_loaded', [$this, 'setup_front_page_context']);
-        add_filter('the_excerpt', array($this, 'modify_read_more_text'));
+        add_filter('the_content_more_link', array($this, 'modify_read_more_link'));
 	}
 
 	public function clear_all_transients() {
@@ -158,9 +158,11 @@ class Animation extends Site {
     //     $context = $this->add_teaser_context($post_id);
     //     Timber::render('parts/teaser.twig', $context);
     // }
-	public function modify_read_more_text($excerpt) {
-        // Assurez-vous que cette expression régulière correspond à la structure HTML de votre lien "Read More"
-        return preg_replace('/<a .*?class=".*?read-more.*?".*?>Read More<\/a>/', '<a href="' . get_permalink() . '" class="read-more">Lire la suite</a>', $excerpt);
+	
+    // Replaces the excerpt "Read More" text by a link
+    public function modify_read_more_link() {
+        // Remplacer "Your Read More Link Text" par le texte désiré en français
+        return '<a class="more-link" href="' . get_permalink() . '">Lire la suite</a>';
     }
 
     public function myfoo( $text ) {

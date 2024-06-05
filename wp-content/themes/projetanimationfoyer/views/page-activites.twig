@@ -1,13 +1,18 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+
 <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
+
     <section class="article-content">
+    <div class="top-activites">
         <h1 class="article-h1">{{ post.title }}</h1>
+        </div>
         <div class="article-body">{{ post.content }}</div>
         {# <div class="planning_form">
     {{ wp.do_shortcode('[shiftcontroller4]') }}
 </div> #}
     </section>
 </article>
+
 {% endblock %}
