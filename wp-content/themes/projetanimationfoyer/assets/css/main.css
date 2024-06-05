@@ -243,6 +243,7 @@ margin-top: 10px;
 background-color: #17286A;
 color: #FFFFFF;
 padding: 4rem 0 5rem;
+margin-bottom: 10px;
 position: relative;
 overflow: hidden;
 display: flex;
@@ -253,3 +254,21 @@ font-size: 2.625rem;
 line-height: 3.25rem;
 
 }
+
+/* -- Page-Animations.twig -- */
+
+.top-animations {
+    background-color: #17286A;
+    color: #FFFFFF;
+    padding: 4rem 0 5rem;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.625rem;
+    line-height: 3.25rem;
+    
+    }
