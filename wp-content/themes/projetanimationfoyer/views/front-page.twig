@@ -1,9 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
-    <section class="top-page">
-     <h1 class="article-h1">{{ post.title }}</h1>
-    </section>
+     {% include 'parts/top-page.twig' %}
     <div class="front-article">
     {% if latest_posts_by_category %}
         <ul>
