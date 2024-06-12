@@ -106,7 +106,6 @@ body > header > header > div.menu-border-wrapper > div > nav > ul > li.nav-main-
 /* --- FOOTER --- */
 
 .footer-area {
-margin-top: 40px;
 padding: 24px;
 background-color: #101F5A;
 }
@@ -281,13 +280,46 @@ margin-top: 10px;
         background-color: #17286A;
         color: #FFFFFF;
         padding: 4rem 0 5rem;
-        margin-bottom: 10px;
         position: relative;
         overflow: hidden;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 2.625rem;
         line-height: 3.25rem;  
 }
+
+#content > div.bottom-wrapper > section > div > div > div.norm_row.sfsi_wDiv {
+    margin-left: 100px;
+}
+
+#social-network-075d4e01a29f > ul {
+    margin-left: 15px;
+}
+
+#social-network-075d4e01a29f > ul > li {
+    margin-left: 15px;
+}
+
+#content > div.bottom-wrapper > section > div > div > div.norm_row.sfsi_wDiv > div:nth-child(1) > div{
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+
+#content > div.bottom-wrapper > section > div > div > div.norm_row.sfsi_wDiv > div:nth-child(2) > div {
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+
+#content > div.bottom-wrapper > section > div > div > div.norm_row.sfsi_wDiv > div:nth-child(3) > div {
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+
+#content > div.bottom-wrapper > section > div > div > div.norm_row.sfsi_wDiv > div:nth-child(4) > div {
+    background-color: #FFFFFF;
+    border-radius: 100%;
+}
+
+
