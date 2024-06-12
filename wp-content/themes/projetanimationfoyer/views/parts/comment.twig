@@ -4,8 +4,8 @@
 
     <section class="comment-box">
         {% include 'parts/comment-form.twig' %}
-
-        {% if post.comments %}
+        
+        {% if comment.children %}
             <h4>réponses</h4>
             <div class="comments">
                 {% for cmt in comment.children %}

@@ -266,7 +266,8 @@ class HC3_Session implements HC3_Session_
 		// Kill the cookie
 		@setcookie(
 					$this->sess_cookie_name,
-					addslashes(serialize(array())),
+					// addslashes(serialize(array())),
+					addslashes(json_encode(array())),
 					($this->now - 31500000),
 					$this->cookie_path,
 					$this->cookie_domain,
@@ -575,12 +576,15 @@ class HC3_Session implements HC3_Session_
 				$data = str_replace('\\', '{{slash}}', $data);
 			}
 		}
-		return serialize($data);
+		// return serialize($data);
+		$ret = json_encode( $data );
+		return $ret;
 	}
 
 	protected function _unserialize($data)
 	{
-		$data = @unserialize( $this->strip_slashes($data) );
+		// $data = @unserialize( $this->strip_slashes($data) );
+		$data = @json_decode( $this->strip_slashes($data), true );
 
 		if (is_array($data)){
 			foreach ($data as $key => $val){

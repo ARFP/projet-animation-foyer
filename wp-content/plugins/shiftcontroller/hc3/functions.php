@@ -34,11 +34,11 @@ class HC3_Functions
 				ID, post_content
 			FROM $wpdb->posts 
 			WHERE 
-				( post_type = 'post' OR post_type = 'page' ) 
+				( post_type IN ('post', 'page') ) 
 				AND 
 				( post_content LIKE '%[" . $shortcode . "%]%' )
 				AND 
-				( post_status = 'publish' )
+				( post_status IN ('publish', 'private') )
 			"
 			);
 

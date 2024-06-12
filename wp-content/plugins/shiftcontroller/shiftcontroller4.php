@@ -3,14 +3,14 @@
  * Plugin Name: ShiftController
  * Plugin URI: https://www.shiftcontroller.com/
  * Description: Staff scheduling plugin
- * Version: 4.9.57
+ * Version: 4.9.58
  * Author: plainware.com
  * Author URI: https://www.shiftcontroller.com/
  * Text Domain: shiftcontroller
  * Domain Path: /languages/
 */
 
-define( 'SH4_VERSION', 4957 );
+define( 'SH4_VERSION', 4958 );
 
 if (! defined('ABSPATH')) exit; // Exit if accessed directly
 
@@ -90,24 +90,46 @@ if( defined('HC3_DEV_INSTALL') ){
 		parent::adminInit();
 	}
 
+	public function getOurShortcodeAtts()
+	{
+		$ret = false;
+
+		$currentUrl = $_SERVER['REQUEST_URI'];
+		$currentPageId = url_to_postid( $currentUrl );
+		if( $currentPageId ){
+			$shortcode = 'shiftcontroller4';
+			$pages = HC3_Functions::wpGetIdByShortcode( $shortcode );
+			if( isset($pages[$currentPageId]) ){
+				$ret = $pages[ $currentPageId ];
+			}
+		}
+
+		return $ret;
+	}
+
 // intercepts if in the front page our slug is given then it's ours
 	public function intercept()
 	{
+		$shortcodeAtts = null;
+
+// compatibility with WooCommerce Availability Scheduler 12.4
+global $was_post_remover;
+if( $was_post_remover ){
+	$shortcodeAtts = $this->getOurShortcodeAtts();
+	if( false !== $shortcodeAtts ){
+		remove_action( 'posts_request', array($was_post_remover,'AS_check_if_unhide_products_and_update_cart') );
+	}
+}
+
 		if( ! $this->isIntercepted() ){
 			return;
 		}
 
 	// it it points to a page with our shortcode then init request with shortcode atts
-		$currentUrl = $_SERVER['REQUEST_URI'];
-		$currentPageId = url_to_postid( $currentUrl );
-
 		$route = '';
-		if( $currentPageId ){
-			$shortcode = 'shiftcontroller4';
-			$pages = HC3_Functions::wpGetIdByShortcode( $shortcode );
-
-			if( isset($pages[$currentPageId]) ){
-				$shortcodeAtts = $pages[$currentPageId];
+		if( null === $shortcodeAtts ){
+			$shortcodeAtts = $this->getOurShortcodeAtts();
+			if( false !== $shortcodeAtts ){
 				$route = $this->initRequestByAtts( $shortcodeAtts );
 			}
 		}

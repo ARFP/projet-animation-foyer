@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% include 'parts/top-page.twig' %}
+    <h1>Blog des Catégories</h1>
+    {% if posts %}
+        <ul>
+            {% for post in posts %}
+                {% include 'posts/post.twig' %}
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Aucun article trouvé dans ces catégories.</p>
+    {% endif %}
+     {# {% include 'parts/comment.twig' %} #}
+{% endblock %}

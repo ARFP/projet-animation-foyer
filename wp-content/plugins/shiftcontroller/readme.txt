@@ -2,7 +2,7 @@
 Contributors: Plainware
 Tags: shift, employee, staff, schedule, staff scheduling, work schedule, shift scheduling, employee scheduling, rota shift scheduling, volunteer schedule, volunteer, human resources
 License: GPLv2 or later
-Stable tag: 4.9.57
+Stable tag: 4.9.58
 Requires at least: 4.1
 Tested up to: 6.5
 Requires PHP: 5.6
@@ -65,6 +65,9 @@ Author URI: https://www.shiftcontroller.com
 The upgrade is simply - upload everything up again to your `/wp-content/plugins/` directory, then go to the ShiftController menu item in the admin panel. It will automatically start the upgrade process if any needed.
 
 == Changelog ==
+
+= 4.9.58 =
+* Minor fixes
 
 = 4.9.57 =
 * BUG: the "Assigned Shift" filter was not working in the schedule view.

@@ -19,10 +19,12 @@ class Animation extends Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+        add_action('init', array($this, 'setup_shortcodes'));
 		// Ajout des hooks
 		add_action('init', [$this, 'clear_all_transients']);
         add_action('wp_loaded', [$this, 'setup_front_page_context']);
         add_filter('the_content_more_link', array($this, 'modify_read_more_link'));
+        add_action('wp_loaded', [$this, 'setup_benevoles_page_context']);
 	}
 
 	public function clear_all_transients() {
@@ -120,7 +122,8 @@ class Animation extends Site {
 	}
 	
     function enqueue_scripts() {
-        wp_enqueue_script('internal-script', '/assets/js/main.js', array(), '1.0.0', true);
+        wp_enqueue_script('internal-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+
       }
       
       
@@ -129,13 +132,13 @@ class Animation extends Site {
         // Ajoutez vos filtres et fonctions Twig personnalisés ici
         $twig->addFilter(new TwigFilter('myfoo', [$this, 'myfoo']));
 		$twig->addFunction(new TwigFunction('home_url', function() {
-            return home_url();
-		
+            return home_url();		
         }));
 		$twig->addExtension(new StringLoaderExtension());
         $twig->addFunction(new TwigFunction('do_shortcode', 'do_shortcode')); 
         // Ajouter un log pour confirmer l'ajout
         error_log('do_shortcode function added to Twig');
+        
 		
         return $twig;
     }
@@ -168,5 +171,32 @@ class Animation extends Site {
     public function myfoo( $text ) {
         $text .= ' bar!';
         return $text;
+    }
+
+    public function setup_shortcodes() {
+        add_shortcode('current_year', function() {
+            return date('Y');
+        });
+    }
+
+    public function setup_benevoles_page_context() {
+        if (is_page('benevoles')) {  // Make sure this matches the slug of your bénévoles page
+            $context = Timber::context();
+    
+            // Set up arguments to query posts from the "bénévoles" category
+            $args = [
+                'category_name' => 'benevoles',  // Replace 'benevoles' with the exact slug of your category
+                'posts_per_page' => -1  // Fetch all posts; adjust as necessary
+            ];
+            
+            // Fetch the posts using Timber
+            $context['benevoles_posts'] = Timber::get_posts($args);
+    
+            // Optionally, add any other contextual data you need for this page
+            // For example, custom fields, additional texts, etc.
+    
+            // Render the template with context
+            Timber::render('page-benevole.twig', $context);
+        }
     }
 }

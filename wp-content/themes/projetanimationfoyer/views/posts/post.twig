@@ -1,0 +1,14 @@
+{# parts/post.twig #}
+<article class="tease tease-{{ post.type }}" id="tease-{{ post.ID }}">
+    <h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+    <div class="thumbnail">
+        {# Utilisation conditionnelle de l'image de vignette si disponible #}
+        {# {% if post.thumbnail.src %}
+            <img src="{{ post.thumbnail.src }}" />
+        {% endif %} #}
+    </div>
+    <div class="content">
+        {{ post.content }}      
+    </div>
+    
+</article>

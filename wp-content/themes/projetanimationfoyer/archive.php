@@ -1,5 +1,3 @@
-<?php
-
 namespace Projet;
 
 use Timber\Timber;
@@ -12,7 +10,7 @@ if (is_day()) {
 } elseif (is_month()) {
     $title = 'Archive: ' . get_the_date('M Y');
 } elseif (is_year()) {
-    $title = 'Archive: ' . get_the_date('Y');
+    $title = 'Archive: ' . get_the_label('Y');
 } elseif (is_tag()) {
     $title = single_tag_title('', false);
 } elseif (is_category()) {
@@ -25,5 +23,8 @@ if (is_day()) {
 
 $context = Timber::context();
 $context['title'] = $title;
+
+// Ajouter les posts au contexte
+$context['posts'] = new Timber\PostQuery();
 
 Timber::render($templates, $context);
