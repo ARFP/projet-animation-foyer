@@ -25,19 +25,17 @@ class Animation extends Site {
 		add_action( 'init', array( $this, 'register_post_types'));
 		add_action( 'init', array( $this, 'register_taxonomies'));
         add_action('init', array($this, 'setup_shortcodes'));
-		add_action('init', ($this, 'clear_all_transients'));
-        add_action('wp_loaded', ($this, 'setup_front_page_context'));
+        add_action('wp_loaded', array($this, 'setup_front_page_context'));
+        add_action('wp_loaded', array($this, 'setup_benevoles_page_context'));
         add_filter('the_content_more_link', array($this, 'modify_read_more_link'));
-        add_action('wp_loaded', ($this, 'setup_benevoles_page_context'));
-        
-       
+    }
 
     public function start_session() {
         if (!session_id()) {
             session_start();
         }
     }
-}
+
 
 public function clear_all_transients() {
     global $wpdb;
@@ -208,6 +206,6 @@ public function clear_all_transients() {
         });
     }    
 
-
+}
 
 
