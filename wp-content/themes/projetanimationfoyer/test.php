@@ -1,7 +1,10 @@
 <?php
+// fichier test.php
+class Test {
+    public function clear_all_transients() {
+        echo "Method is accessible";
+    }
+}
 
-$context = \Timber\Timber::get_context();
-$context['posts'] = Timber\Timber::query_posts();
-
-\Timber\Timber::render('pages/page-test.twig', $context);
-
+$test = new Test();
+$test->clear_all_transients();

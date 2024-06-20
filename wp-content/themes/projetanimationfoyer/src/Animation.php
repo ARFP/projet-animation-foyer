@@ -12,26 +12,38 @@ use Twig\TwigFunction;
 class Animation extends Site {
 	
     public function __construct() {
-		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
+        parent::__construct();
+        add_action('init', array($this, 'clear_all_transients'));
+        add_action('init', array($this, 'start_session'), 1);
+        add_action('wp_logout', array($this, 'end_session'));
+        add_action('wp_login', array($this, 'end_session'));	
+		add_action( 'after_setup_theme', array( $this, 'theme_supports'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts')); //test js
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_custom_styles' ) ); 
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_custom_styles')); 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
-		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
-		add_action( 'init', array( $this, 'register_post_types' ) );
-		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_filter( 'timber/twig', array( $this, 'add_to_twig'));
+		add_action( 'init', array( $this, 'register_post_types'));
+		add_action( 'init', array( $this, 'register_taxonomies'));
         add_action('init', array($this, 'setup_shortcodes'));
-		// Ajout des hooks
-		add_action('init', [$this, 'clear_all_transients']);
-        add_action('wp_loaded', [$this, 'setup_front_page_context']);
+		add_action('init', ($this, 'clear_all_transients'));
+        add_action('wp_loaded', ($this, 'setup_front_page_context'));
         add_filter('the_content_more_link', array($this, 'modify_read_more_link'));
-        add_action('wp_loaded', [$this, 'setup_benevoles_page_context']);
-	}
+        add_action('wp_loaded', ($this, 'setup_benevoles_page_context'));
+        
+       
 
-	public function clear_all_transients() {
-        global $wpdb;
-        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_%'");
-        $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_site_transient_%'");
+    public function start_session() {
+        if (!session_id()) {
+            session_start();
+        }
     }
+}
+
+public function clear_all_transients() {
+    global $wpdb;
+    $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_%'");
+    $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_site_transient_%'");
+}
 
 	// Méthode pour configurer le contexte de la page d'accueil
     public function setup_front_page_context() {
@@ -124,10 +136,7 @@ class Animation extends Site {
     function enqueue_scripts() {
         wp_enqueue_script('internal-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 
-      }
-      
-      
-
+      }    
     public function add_to_twig($twig) {
         // Ajoutez vos filtres et fonctions Twig personnalisés ici
         $twig->addFilter(new TwigFilter('myfoo', [$this, 'myfoo']));
@@ -162,22 +171,6 @@ class Animation extends Site {
     //     Timber::render('parts/teaser.twig', $context);
     // }
 	
-    // Replaces the excerpt "Read More" text by a link
-    public function modify_read_more_link() {
-        // Remplacer "Your Read More Link Text" par le texte désiré en français
-        return '<a class="more-link" href="' . get_permalink() . '">Lire la suite</a>';
-    }
-
-    public function myfoo( $text ) {
-        $text .= ' bar!';
-        return $text;
-    }
-
-    public function setup_shortcodes() {
-        add_shortcode('current_year', function() {
-            return date('Y');
-        });
-    }
 
     public function setup_benevoles_page_context() {
         if (is_page('benevoles')) {  // Make sure this matches the slug of your bénévoles page
@@ -199,4 +192,22 @@ class Animation extends Site {
             Timber::render('page-benevole.twig', $context);
         }
     }
-}
+    public function modify_read_more_link() {
+        // Remplacer "Your Read More Link Text" par le texte désiré en français
+        return '<a class="more-link" href="' . get_permalink() . '">Lire la suite</a>';
+    }
+    
+    public function myfoo( $text ) {
+        $text .= ' bar!';
+        return $text;
+    }
+    
+    public function setup_shortcodes() {
+        add_shortcode('current_year', function() {
+            return date('Y');
+        });
+    }    
+
+
+
+
