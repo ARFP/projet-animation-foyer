@@ -322,4 +322,104 @@ margin-top: 10px;
     border-radius: 100%;
 }
 
+/* Page-Confidentialité */
 
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+p, ul {
+    line-height: 1.75rem;
+    margin-bottom: 1.8rem;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+}
+
+body {
+    margin: 50px;
+    --wp--style--global--content-size: 1300px;
+    --wp--style--global--wide-size: 900px;
+}
+
+#post-11 > section > div > h3:nth-child(40) {
+    margin: 25px;
+}
+
+.article-body > h2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+
+/* page-mentions-legales */
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 50px;
+    --wp--style--global--content-size: 1300px;
+    --wp--style--global--wide-size: 900px;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+}
+
+.article-body > h2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+p, ul {
+    line-height: 1.75rem;
+    margin-bottom: 1.8rem;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}

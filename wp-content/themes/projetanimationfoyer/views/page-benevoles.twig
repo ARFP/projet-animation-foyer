@@ -4,10 +4,14 @@
 <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
     <section class="article-content">
   {% include 'parts/top-page.twig' %}
-        <div class="article-body">{{ post.content }}</div>
-        <div class="planning_form">
-    {{ wp.do_shortcode('[shiftcontroller4]') }}
-</div>
+  
+<form method="post" action="/path/to/login.php">
+    Nom d'utilisateur: <input type="text" name="username">
+    Mot de passe: <input type="password" name="password">
+    <input type="submit" value="Login">
+</form>
+
+
     </section>
 </article>
 {% endblock %}
