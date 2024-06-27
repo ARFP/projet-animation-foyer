@@ -10,8 +10,23 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class Animation extends Site {
-    
-    public function __construct() {
+      // ...
+
+    /**
+     * Vérifie le mot de passe de l'utilisateur.
+     *
+     * @param string $user_login Le login de l'utilisateur.
+     * @param string $password Le mot de passe saisi.
+     * @return bool Retourne true si le mot de passe est correct.
+     */
+    public function verify_user_password($user_login, $password) {
+        $user = get_user_by('login', $user_login);
+        if ($user && wp_check_password($password, $user->user_pass, $user->ID)) {
+            return true;
+        }
+        return false;
+    }
+ public function __construct() {
         parent::__construct();
         add_action('init', array($this, 'clear_all_transients'));
         add_action('init', array($this, 'start_session'), 1);
@@ -35,6 +50,13 @@ class Animation extends Site {
             session_start();
         }
     }
+    
+    public function end_session() {
+        if (session_id()) {
+            session_destroy();
+        }
+    }
+    
 
     public function clear_all_transients() {
         global $wpdb;
@@ -42,20 +64,20 @@ class Animation extends Site {
         $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_site_transient_%'");
     }
 
-    public function end_session() {
-        session_destroy();
-    }
 
     public function login_redirect($user_login, $user) {
-        $password = $_POST['pwd']; // Le mot de passe saisi par l'utilisateur
-        if ($this->verify_user_password($user_login, $password)) {
-            wp_redirect(home_url('/page-secrete')); // Modifier par l'URL désirée
-            exit;
-        } else {
-            wp_redirect(home_url('/login?error=invalid')); // Redirige vers la page de connexion avec un message d'erreur
-            exit;
+        if (isset($_POST['pwd'])) {
+            $password = sanitize_text_field($_POST['pwd']);
+            if (wp_check_password($password, $user->user_pass, $user->ID)) {
+                wp_redirect(home_url('/page-secrete'));
+                exit;
+            } else {
+                wp_redirect(home_url('/accieul'));
+                exit;
+            }
         }
     }
+    
 
     public function theme_supports() {
         add_theme_support('automatic-feed-links');
@@ -112,7 +134,14 @@ class Animation extends Site {
             Timber::render('front-page.twig', $context);
         }
     }
-
     public function setup_benevoles_page_context() {
-        if (is_page('benevoles'))
+        if (is_page('benevoles')) {
+            $context = Timber::context();
+            // Here you should fetch and assign your data to the context. For example:
+            // $context['volunteers'] = get_volunteers_data(); // Replace with your actual data fetching logic
+            echo Timber::compile('benevoles-page.twig', $context);
+        }
     }
+    
+    
+} 
