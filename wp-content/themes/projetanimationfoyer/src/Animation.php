@@ -10,38 +10,33 @@ use Twig\TwigFilter;
 use Twig\TwigFunction;
 
 class Animation extends Site {
-      // ...
 
-    /**
-     * Vérifie le mot de passe de l'utilisateur.
-     *
-     * @param string $user_login Le login de l'utilisateur.
-     * @param string $password Le mot de passe saisi.
-     * @return bool Retourne true si le mot de passe est correct.
-     */
-    public function verify_user_password($user_login, $password) {
-        $user = get_user_by('login', $user_login);
-        if ($user && wp_check_password($password, $user->user_pass, $user->ID)) {
-            return true;
-        }
-        return false;
-    }
- public function __construct() {
+    public function __construct() {
         parent::__construct();
+        $this->register_actions();
+        $this->register_filters();
+    }
+
+    private function register_actions() {
         add_action('init', array($this, 'clear_all_transients'));
         add_action('init', array($this, 'start_session'), 1);
         add_action('wp_logout', array($this, 'end_session'));
         add_action('wp_login', array($this, 'login_redirect'), 10, 2);
         add_action('after_setup_theme', array($this, 'theme_supports'));
+        add_action('after_setup_theme', array($this, 'add_custom_roles'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_custom_styles'));
-        add_filter('timber/context', array($this, 'add_to_context'));
-        add_filter('timber/twig', array($this, 'add_to_twig'));
         add_action('init', array($this, 'register_post_types'));
         add_action('init', array($this, 'register_taxonomies'));
         add_action('init', array($this, 'setup_shortcodes'));
         add_action('wp_loaded', array($this, 'setup_front_page_context'));
         add_action('wp_loaded', array($this, 'setup_benevoles_page_context'));
+        add_action('admin_menu', array($this, 'add_admin_pages')); // Ajouter la page d'administration
+    }
+
+    private function register_filters() {
+        add_filter('timber/context', array($this, 'add_to_context'));
+        add_filter('timber/twig', array($this, 'add_to_twig'));
         add_filter('the_content_more_link', array($this, 'modify_read_more_link'));
     }
 
@@ -56,7 +51,6 @@ class Animation extends Site {
             session_destroy();
         }
     }
-    
 
     public function clear_all_transients() {
         global $wpdb;
@@ -64,12 +58,17 @@ class Animation extends Site {
         $wpdb->query("DELETE FROM $wpdb->options WHERE option_name LIKE '_site_transient_%'");
     }
 
-
     public function login_redirect($user_login, $user) {
         if (isset($_POST['pwd'])) {
             $password = sanitize_text_field($_POST['pwd']);
             if (wp_check_password($password, $user->user_pass, $user->ID)) {
-                wp_redirect(home_url('/page-secrete'));
+                if (in_array('benevole', $user->roles)) {
+                    wp_redirect(home_url('/benevoles'));
+                } elseif (in_array('admin_benevole', $user->roles)) {
+                    wp_redirect(home_url('/admin-benevoles'));
+                } else {
+                    wp_redirect(home_url('/page-secrete'));
+                }
                 exit;
             } else {
                 wp_redirect(home_url('/accieul'));
@@ -77,7 +76,6 @@ class Animation extends Site {
             }
         }
     }
-    
 
     public function theme_supports() {
         add_theme_support('automatic-feed-links');
@@ -124,24 +122,70 @@ class Animation extends Site {
         }));
         $twig->addExtension(new StringLoaderExtension());
         $twig->addFunction(new TwigFunction('do_shortcode', 'do_shortcode'));
+        $twig->addFunction(new TwigFunction('current_user_can', function($capability) {
+            return current_user_can($capability);
+        }));
         return $twig;
     }
 
     public function setup_front_page_context() {
         if (is_front_page()) {
             $context = Timber::context();
-            $context['posts'] = new Timber\PostQuery();
+            $context['posts'] = Timber::get_posts();
             Timber::render('front-page.twig', $context);
         }
     }
+
     public function setup_benevoles_page_context() {
         if (is_page('benevoles')) {
-            $context = Timber::context();
-            // Here you should fetch and assign your data to the context. For example:
-            // $context['volunteers'] = get_volunteers_data(); // Replace with your actual data fetching logic
-            echo Timber::compile('benevoles-page.twig', $context);
+            if (current_user_can('access_benevoles_page')) {
+                $context = Timber::context();
+                $context['message'] = 'Bienvenue sur la page des bénévoles.';
+                Timber::render('benevoles-page.twig', $context);
+            } else {
+                wp_redirect(home_url('/'));
+                exit;
+            }
         }
     }
-    
-    
-} 
+
+    public function add_custom_roles() {
+        add_role(
+            'benevole',
+            __('Bénévole'),
+            array(
+                'read' => true,
+                'access_benevoles_page' => true,
+            )
+        );
+        
+        add_role(
+            'admin_benevole',
+            __('Admin Bénévole'),
+            array(
+                'read' => true,
+                'access_benevoles_page' => true,
+                'manage_benevoles' => true,
+            )
+        );
+    }
+
+    public function add_admin_pages() {
+        add_menu_page(
+            __('Gestion des Bénévoles'),
+            __('Bénévoles'),
+            'manage_benevoles',
+            'gestion_benevoles',
+            array($this, 'render_benevoles_admin_page')
+        );
+    }
+
+    public function render_benevoles_admin_page() {
+        // Logique pour afficher et gérer les bénévoles
+        echo '<div class="wrap">';
+        echo '<h1>Gestion des Bénévoles</h1>';
+        echo '<p>Cette page vous permet de gérer les bénévoles.</p>';
+        // Ajoutez ici le code HTML pour afficher et gérer les bénévoles
+        echo '</div>';
+    }
+}
