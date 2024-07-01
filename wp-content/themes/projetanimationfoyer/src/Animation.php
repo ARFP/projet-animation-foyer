@@ -31,7 +31,7 @@ class Animation extends Site {
         add_action('init', array($this, 'setup_shortcodes'));
         add_action('wp_loaded', array($this, 'setup_front_page_context'));
         add_action('wp_loaded', array($this, 'setup_benevoles_page_context'));
-        add_action('admin_menu', array($this, 'add_admin_pages')); // Ajouter la page d'administration
+        add_action('admin_menu', array($this, 'add_admin_pages'));
     }
 
     private function register_filters() {
@@ -45,7 +45,7 @@ class Animation extends Site {
             session_start();
         }
     }
-    
+
     public function end_session() {
         if (session_id()) {
             session_destroy();
@@ -158,7 +158,7 @@ class Animation extends Site {
                 'access_benevoles_page' => true,
             )
         );
-        
+
         add_role(
             'admin_benevole',
             __('Admin Bénévole'),
@@ -181,11 +181,68 @@ class Animation extends Site {
     }
 
     public function render_benevoles_admin_page() {
-        // Logique pour afficher et gérer les bénévoles
         echo '<div class="wrap">';
         echo '<h1>Gestion des Bénévoles</h1>';
         echo '<p>Cette page vous permet de gérer les bénévoles.</p>';
         // Ajoutez ici le code HTML pour afficher et gérer les bénévoles
         echo '</div>';
+    }
+
+    public function setup_shortcodes() {
+        add_shortcode('custom_login_form', array($this, 'render_login_form'));
+    }
+
+    public function render_login_form() {
+        ob_start();
+        if (is_user_logged_in()) {
+            wp_redirect(home_url());
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = sanitize_text_field($_POST['username']);
+            $password = sanitize_text_field($_POST['password']);
+
+            $creds = array(
+                'user_login'    => $username,
+                'user_password' => $password,
+                'remember'      => true
+            );
+
+            $user = wp_signon($creds, false);
+
+            if (is_wp_error($user)) {
+                $error_message = $user->get_error_message();
+            } else {
+                wp_redirect(home_url());
+                exit;
+            }
+        }
+        ?>
+
+        <div class="login-form">
+            <h2>Login</h2>
+            <?php if (!empty($error_message)): ?>
+                <div class="error">
+                    <?php echo $error_message; ?>
+                </div>
+            <?php endif; ?>
+            <form method="post" action="">
+                <p>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" required>
+                </p>
+                <p>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" required>
+                </p>
+                <p>
+                    <input type="submit" value="Login">
+                </p>
+            </form>
+        </div>
+
+        <?php
+        return ob_get_clean();
     }
 }

@@ -1,12 +1,22 @@
-/**
- * Template Name: Page Secrète
- */
+<?php
+/*
+Template Name: Benevoles Page
+*/
 
-$context = Timber::context();
+if (!is_user_logged_in() || !current_user_can('access_benevoles_page')) {
+    wp_redirect(home_url('/login'));
+    exit;
+}
 
-$context['message'] = "Bienvenue sur la page secrète accessible uniquement aux utilisateurs authentifiés.";
+get_header();
+?>
 
-// Charger des informations spécifiques si nécessaire
-// $context['data'] = new Timber\PostQuery();
+<div class="benevoles-page">
+    <h2>Page des Bénévoles</h2>
+    <p>Bienvenue sur la page des bénévoles.</p>
+    <div>
+        Voici des informations confidentielles ou des fonctionnalités accessibles uniquement aux bénévoles.
+    </div>
+</div>
 
-Timber::render('page-secrete.twig', $context);
+<?php get_footer(); ?>
