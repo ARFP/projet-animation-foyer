@@ -207,6 +207,10 @@ margin-left: 30px;
     #wpcf7-f308-p277-o1 > form > p:nth-child(5) {
         display: flex;
         justify-content: flex-end;
+        width: 66.69;
+        height: 34;
+        transform: scale(1.5);
+        margin-right: 30px;
     }
    
 
