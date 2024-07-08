@@ -1,33 +1,29 @@
 <?php
+/**
+ * Template Name: Page Bénévoles
+ */
 
 namespace Projet;
 
 use Timber\Timber;
+use Timber\PostQuery;
 
+// Initialiser le contexte Timber
 $context = Timber::context();
-$post = $context['post'];
 
-/*
-Template Name: Benevoles Page
-*/
+// Spécifiez les slugs des catégories pour lesquelles vous souhaitez récupérer les articles
+$categories = ['benesecret']; // Assurez-vous que les slugs sont corrects
 
-if (!is_user_logged_in() || !current_user_can('access_benevoles_page')) {
-    wp_redirect(home_url('/login'));
-    exit;
-}
+// Paramètres de la requête pour récupérer les articles
+$args = [
+    'post_type' => 'post',                    // Type de post
+    'posts_per_page' => -1,                   // -1 signifie "afficher tous les articles"
+    'category_name' => implode(',', $categories) // Fusionner les slugs de catégorie pour la requête
+];
 
-get_header();
-?>
+// Utiliser Timber::get_posts pour récupérer les articles selon les critères définis dans $args
+$context['posts'] = Timber::get_posts($args);
 
-<div class="benevoles-page">
-    <h2>Page des Bénévoles</h2>
-    <p>Bienvenue sur la page des bénévoles.</p>
-    <div>
-        Voici des informations confidentielles ou des fonctionnalités accessibles uniquement aux bénévoles.
-    </div>
-</div>
+// Envoyer le contexte au template Twig
+Timber::render('page-benevoles.twig', $context);
 
-<?php get_footer(); ?>
-
-
-Timber::render(array('page-' . $post->post_name . '.twig', 'page-benevoles.twig'), $context);

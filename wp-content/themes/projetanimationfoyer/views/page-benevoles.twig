@@ -1,15 +1,15 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-  {% if current_user_can('access_benevoles_page') %}
-    <h1>Page des Bénévoles</h1>
-    <p>{{ message }}</p>
-    <div>
-      Voici des informations confidentielles ou des fonctionnalités accessibles uniquement aux bénévoles.
-    </div>
-  {% else %}
-    <p>Vous n'avez pas les permissions nécessaires pour accéder à cette page.</p>
-  {% endif %}
+   {% include 'parts/top-page.twig' %}
+    {% for post in posts %}
+    <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
+        <section class="article-content">
+        
+            <div class="article-body">{{ post.content }}</div>
+        </section>
+    </article>
+    {% endfor %}
 
 <div class="bottom-wrapper">
       {% include 'parts/bottom-wrapper.twig' %}

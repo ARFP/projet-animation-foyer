@@ -9,7 +9,7 @@ $context = Timber::context();
 
 // Récupérer les catégories en excluant la catégorie 'benevoles'
 $categories = get_categories([
-    'exclude' => get_cat_ID('benevoles') // Remplacez 'benevoles' par le slug ou le nom exact de la catégorie
+    'exclude' => get_cat_ID('benesecret') // Remplacez 'benevoles' par le slug ou le nom exact de la catégorie
 ]);
 
 // Récupérer les derniers articles de chaque catégorie

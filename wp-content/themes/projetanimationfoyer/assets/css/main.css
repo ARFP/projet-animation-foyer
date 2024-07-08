@@ -144,22 +144,58 @@ grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
 
-.contact-content {
+#wpcf7-f304-p9-o1 {
 grid-area: 1 / 2 / 2 / 3; 
-margin-left: 80px;
-}
-
-.contact-title {
 font-family: 'Montserrat', sans-serif;
 color: #FFFFFF;
 background-color: var(--color-theme-primary);
 }
 
-.contact-title h1 {
-margin-left: 30px;
+#wpcf7-f304-p9-o1 > form > p:nth-child(2) > label {
+    margin-left: 15px;
 }
 
+#wpcf7-f304-p9-o1 > form > p:nth-child(3) > label {
+    margin-left: 15px;
+}
 
+#wpcf7-f304-p9-o1 > form > p:nth-child(4) > label {
+    margin-left: 15px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(5) > label {
+    margin-left: 15px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(2) > label > span > input {
+    margin-left: 30px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(3) > label > span > input {
+    margin-left: 30px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(4) > label > span > input {
+    margin-left: 30px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(5) > label > span > textarea {
+    margin-left: 30px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(6) {
+    display: flex;
+    justify-content: flex-end;
+    width: 66.69;
+    height: 34;
+    transform: scale(1.5);
+    margin-right: 30px;
+}
+
+#wpcf7-f304-p9-o1 > form > p:nth-child(6) > input {
+    background-color: var(--color-theme-quinary);
+    color:#FFFFFF;
+}
 
 /* template bénévoles inscription */
 
@@ -218,6 +254,23 @@ margin-left: 30px;
         background-color: var(--color-theme-quinary);
         color:#FFFFFF;
     }
+
+/* template page-benevoles */
+
+body > header > header > div.menu-border-wrapper > div > nav > ul > li.nav-main-item.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-313 {
+    background-color: var(--color-theme-quaternary);
+}
+
+body > header > header > div.menu-border-wrapper > div > nav > ul > li.nav-main-item.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-313 > a {
+    color: #FFFFFF;
+}
+
+/* template planning */
+
+#hc3 > div > div > div > div.hc-mt3 > div {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F5F6F9;
+}
 
 /* -- FRONT-PAGE -- */
 
