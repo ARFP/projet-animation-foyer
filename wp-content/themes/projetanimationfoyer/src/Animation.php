@@ -15,6 +15,7 @@ class Animation extends Site {
         parent::__construct();
         $this->register_actions();
         $this->register_filters();
+        $this->setup_shortcodes();
     }
 
     private function register_actions() {
@@ -32,6 +33,8 @@ class Animation extends Site {
         add_action('wp_loaded', array($this, 'setup_front_page_context'));
         add_action('wp_loaded', array($this, 'setup_benevoles_page_context'));
         add_action('admin_menu', array($this, 'add_admin_pages'));
+        add_action('wp_loaded', array($this, 'handle_contact_form_submission'));
+        
     }
 
     private function register_filters() {
@@ -190,6 +193,7 @@ class Animation extends Site {
 
     public function setup_shortcodes() {
         add_shortcode('custom_login_form', array($this, 'render_login_form'));
+        add_shortcode('contact_form', array($this, 'render_contact_form'));
     }
 
     public function render_login_form() {
@@ -245,4 +249,7 @@ class Animation extends Site {
         <?php
         return ob_get_clean();
     }
+
+   
+
 }
