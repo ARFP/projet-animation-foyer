@@ -138,14 +138,14 @@ color: #FFFFFF;
 .contact-article-body {
 padding-top: 30px;
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(3, 1fr);
 grid-template-rows: 1fr;
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 }
 
 .contact-content {
-grid-area: 1 / 2 / 2 / 4;
+grid-area: 1 / 2 / 2 / 3; 
 margin-left: 80px;
 }
 
@@ -159,19 +159,61 @@ background-color: var(--color-theme-primary);
 margin-left: 30px;
 }
 
-#wpforms-135 {
-font-family: Sarabun, sans-serif;
 
-}
 
-.wpforms-field-label {
-color: var(--color-theme-primary);
-}
+/* template bénévoles inscription */
 
-button#wpforms-submit-135 {
-background-color: var(--color-theme-secondary);
-font-family: 'Montserrat', sans-serif;
-}
+.contact-article-body {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    #wpcf7-f308-p277-o1 {
+    grid-area: 1 / 2 / 2 / 3; 
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    background-color: var(--color-theme-primary);
+    }
+     
+    #wpcf7-f308-p277-o1 > form > p:nth-child(2) > label {
+        margin-left: 15px;
+    }
+   
+    #wpcf7-f308-p277-o1 > form > p:nth-child(3) > label {
+        margin-left: 15px;
+    }
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(4) > label {
+        margin-left: 15px;
+    }
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(2) > label > span > input {
+        margin-left: 30px;
+    }
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(3) > label > span > input {
+        margin-left: 30px;
+    }
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(4) > label > span > textarea {
+        margin-left: 30px;
+    }
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(5) {
+        display: flex;
+        justify-content: flex-end;
+    }
+   
+
+    #wpcf7-f308-p277-o1 > form > p:nth-child(5) > input {
+        background-color: var(--color-theme-quinary);
+        color:#FFFFFF;
+    }
 
 /* -- FRONT-PAGE -- */
 
