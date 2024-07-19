@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "content-protector/area",
+  "icon": "lock",
+  "version": "4.0.0",
+  "title": "Passster: Area",
+  "category": "widgets",
+  "description": "Select a protected area from Passster",
+  "keywords": [
+    "Passster",
+    "Password protection",
+    "Protected Area",
+    "Area"
+  ],
+  "supports": {
+    "html": false,
+    "customClassName": false
+  },
+  "attributes": {
+    "area_id": {
+      "type": "string",
+      "default": 0
+    },
+    "headline": {
+      "type": "string"
+    },
+    "instruction": {
+      "type": "string"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  },
+  "textdomain": "content-protector",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.scss",
+  "style": "file:./style.scss"
+}

@@ -1,0 +1,585 @@
+{
+   "domain": "content-protector",
+   "locale_data": {
+      "content-protector": {
+         "": {
+            "domain": "content-protector",
+            "plural_forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);",
+            "lang": "ru"
+         },
+         "Passster": [
+            "Passster"
+         ],
+         "The Passster Beaver Builder Module": [
+            "Будівельний модульPassster"
+         ],
+         "Content Protection": [
+            "Захист контенту"
+         ],
+         "Select Type": [
+            "Виберить тип"
+         ],
+         "Password": [
+            "Пароль"
+         ],
+         "Captcha": [
+            "Капча"
+         ],
+         "ReCaptcha": [
+            "ReCaptcha"
+         ],
+         "Passwords": [
+            "Паролі"
+         ],
+         "Password List": [
+            "Список паролів"
+         ],
+         "Multiple Passwords": [
+            "Мультипаролі"
+         ],
+         "Separate multiple passwords with a comma": [
+            "Перерахуйте паролі через кому"
+         ],
+         "Password Lists": [
+            "Список паролів"
+         ],
+         "Headline": [
+            "Заголовок"
+         ],
+         "Protected Area": [
+            "Область, що захищається"
+         ],
+         "Placeholder Input": [
+            "Заповнить поле"
+         ],
+         "Enter your Password": [
+            "Введіть Ваш пароль"
+         ],
+         "Button Label": [
+            "Напис на кнопці"
+         ],
+         "Submit": [
+            "Відправити"
+         ],
+         "Instruction Text": [
+            "Текст інструкції"
+         ],
+         "This content is protected!": [
+            "Цей контент захищен!"
+         ],
+         "Protected Text": [
+            "Текст, що захищається"
+         ],
+         "This is your protected content.": [
+            "Тут ваш захищений контент."
+         ],
+         "Shortcode": [
+            "Шорткод"
+         ],
+         "Protection": [
+            "Захист"
+         ],
+         "Protection Type": [
+            "Тип захисту"
+         ],
+         "Enter your password": [
+            "Введіть Ваш пароль"
+         ],
+         "Enter your passwords": [
+            "Введіть Ваш паролі"
+         ],
+         "Texts": [
+            "Тексти"
+         ],
+         "Input Placeholder": [
+            "Заповніть поле"
+         ],
+         "Enter Password": [
+            "Введіть пароль"
+         ],
+         "Instructions Text": [
+            "Текст інструкції"
+         ],
+         "This content is protected. Please enter your password to unlock.": [
+            "Цей контент захищений. Будь ласка, введіть свій пароль, щоб його розблокувати."
+         ],
+         "Protected Content": [
+            "Захищений контент"
+         ],
+         "This content is your protected content": [
+            "Цей контент є вашим захищеним контентом"
+         ],
+         "\"%1$s\" requires \"%2$s\" to be installed and activated.": [
+            "\"%1$s\" требует, чтобы \"%2$s\" был установлен и активирован."
+         ],
+         "Elementor Passster Extension": [
+            "Розширення Elementor для Пассстера"
+         ],
+         "Elementor": [
+            "Elementer"
+         ],
+         "\"%1$s\" requires \"%2$s\" version %3$s or greater.": [
+            "\"%1$s\" потребує \"%2$s\" версії %3$s або вище."
+         ],
+         "Protection type": [
+            "Тип захисту"
+         ],
+         "ReCatpcha": [
+            "ReCatpcha"
+         ],
+         "Choose your protection type": [
+            "Виберіть тип захисту"
+         ],
+         "Add multiple passwords separated by comma.": [
+            "Додайте кілька паролів, розділених комою."
+         ],
+         "Choose your password list": [
+            "Виберіть Ваш список паролів"
+         ],
+         "Build protected areas with Passster.": [
+            "Побудуйте захищені області з Passster."
+         ],
+         "Authentication": [
+            "Індефікація"
+         ],
+         "Use this if you have multiple Passster elements per page": [
+            "Використовуйте це, якщо у вас є кілька елементів Passster на сторінку"
+         ],
+         "This is your protected content!": [
+            "Це Ваш захищений контент!"
+         ],
+         "This content is protected.": [
+            "Цей контент захищен."
+         ],
+         "Placeholder Text": [
+            "Поле для введення тексту"
+         ],
+         "Enter the password": [
+            "Введіть пароль"
+         ],
+         "Edit": [
+            "Редагувати"
+         ],
+         "Delete": [
+            "Видалити"
+         ],
+         "Active": [
+            "Активний"
+         ],
+         "Inactive": [
+            "Неактивний"
+         ],
+         "Copy Shortcode": [
+            "Скопіювати шорткод"
+         ],
+         "Expire Passwords": [
+            "Строк дії паролів"
+         ],
+         "Parameter": [
+            "Параметр"
+         ],
+         "password_lists": [
+            "cписок паролів"
+         ],
+         "Return to all password lists": [
+            "Повернутися до всіх списків паролів"
+         ],
+         "Title": [
+            "Заголовок"
+         ],
+         "The title helps you identify the list later.": [
+            "Назва допоможе визначити список пізніше."
+         ],
+         "Save Password List": [
+            "Зберегти список паролів"
+         ],
+         "No": [
+            "НІ"
+         ],
+         "Yes": [
+            "ТАК"
+         ],
+         "Want to use expire passwords option?": [
+            "Бажаєте використати опцію терміну дії пароля?"
+         ],
+         "Add a comma-separated list of passwords in this field.": [
+            "Додайте розділений комами список паролів у цьому полі."
+         ],
+         "Use this little tool to <b>generate your shortcode</b>. Simply fill out the fields, save your changes and copy your shortcode. It <b>does not</b> influence your current shortcodes. ": [
+            "Використовуйте цей маленький інструмент для <b> генерації вашого шорткода </b>. Просто заповніть поля, збережіть зміни і скопіюйте свій шорткод. Це <b> не </b> впливає на ваші поточні шорткоди. "
+         ],
+         "Shortcode Generator": [
+            "Генератор шорткодів"
+         ],
+         "Add your Shortcode Password": [
+            "Додайте у свій шорткод пароль"
+         ],
+         "User Groups": [
+            "Групи користувачів"
+         ],
+         "Add a comma separated list of user groups which should be able to bypass the protection.": [
+            "Додайте розділений комами список груп користувачів, які мають право обійти захист."
+         ],
+         "Users": [
+            "Користувачи"
+         ],
+         "Add a comma separated list of users which should be able to bypass the protection.": [
+            "Додайте розділений комами список користувачів, які мають право обійти захист."
+         ],
+         "Copy shortcode": [
+            "Скопіюйте шорткод"
+         ],
+         "Captcha Code Length": [
+            "Довжина коду капчі"
+         ],
+         "Length of the generated code. For example 4 means a Code like \"A2cD\"": [
+            "Довжина згенерованого коду. Наприклад, 4 означає код типу «A2cD»."
+         ],
+         "Width": [
+            "Ширина"
+         ],
+         "Width of the captcha image": [
+            "Ширина зображення капчі"
+         ],
+         "Height": [
+            "Висота"
+         ],
+         "Height of the captcha image": [
+            "Висота зображення капчі"
+         ],
+         "Background color": [
+            "Колір фону"
+         ],
+         "add a background-color for your captcha": [
+            "додати колір фону для вашої капчі"
+         ],
+         "#FFFFFF": [
+            "#FFFFFF"
+         ],
+         "Difficulty": [
+            "Складність"
+         ],
+         "Lines in background": [
+            "Прозорий фон"
+         ],
+         "Number of lines in the background": [
+            "Кількість рядків на задньому плані"
+         ],
+         "Lines in front": [
+            "Лінії попереду"
+         ],
+         "Number of lines in the front": [
+            "Кількість рядків на передньому плані"
+         ],
+         "Remove all lines and distortion effects from captcha image": [
+            "Видалити всі лінії та ефекти спотворення із зображення з картинки"
+         ],
+         "Use only numbers": [
+            "Використовувати лише цифри"
+         ],
+         "Google Recaptcha": [
+            "Google ReCaptcha"
+         ],
+         "Site Key": [
+            "Ключ сайту"
+         ],
+         "Add your Google ReCaptcha Site Key": [
+            "Додайте свій ключ сайту в Google ReCaptcha"
+         ],
+         "Secret": [
+            "Секрет"
+         ],
+         "Add your Google ReCaptcha Secret": [
+            "Додати свій секретний ключ від Google ReCaptcha"
+         ],
+         "Language": [
+            "Мова"
+         ],
+         "Add your language shortcode. For example \"en\" for english or \"de\" for german. ": [
+            "Додайте свій мовний шорткод. Наприклад, «en» для англійської або «de» для німецького. "
+         ],
+         "Link": [
+            "Посилання"
+         ],
+         "Slug": [
+            "Слаг"
+         ],
+         "Enter the page slug where the shortcode is placed which you want to unlock.": [
+            "Введіть слаг сторінки, де знаходиться шорткод, який ви хочете розблокувати."
+         ],
+         "This should match your shortcode password. <br>The password will be encrypted in the URL": [
+            "Це має відповідати вашому паролю. <br> Пароль буде зашифрований в URL"
+         ],
+         "Bitly API (Optional)": [
+            "Назва API (необязательно):"
+         ],
+         "You can shorten the ecrypted password link with bit.ly. So the given URL is as short as possible.": [
+            "Ви можете скоротити зашифрований пароль за допомогою bitly посилання. Таким чином, ця URL-адреса є максимально короткою."
+         ],
+         "About Bitly": [
+            "О Бітлі"
+         ],
+         "Bitly Access Token": [
+            "Код доступу"
+         ],
+         "Your bitly access token": [
+            "Ваш код доступу"
+         ],
+         "Copy link": [
+            "Скопиювати посилання"
+         ],
+         "Addons": [
+            "Доповнення"
+         ],
+         "All Addons are included in the <b>pro version of Passster</b>. Activate and use the advanced features to get the maximum of out of content protection.": [
+            "Всі доповнення додани в <b> професійну версію Passster </ b>. Активуйте та використовувайте розширені функції, щоб отримати максимальний захист конткнету."
+         ],
+         "Explanation": [
+            "Пояснення"
+         ],
+         "The Multiple Passwords Addon allows you to add multiple passwords per shortcode. You could also use the Password Generator with this addon.": [
+            "Доповнення для кількох паролів дозволяє додавати кілька паролів для кожного шорткоду. Ви також можете використовувати генератор паролів з цим доповненням."
+         ],
+         "Description": [
+            "Опис"
+         ],
+         "Activate Multiple Passwords": [
+            "Активувати мультипаролі"
+         ],
+         "The User Addon add a role and and a user parameter to the passster shortcode. So specified users roles or users can bypass the content protection. Great for memberships or any kind of account based restriction.": [
+            "Аддон користувача додає роль і параметр користувача в шорткод passster. Таким чином, ці ролі користувачів або користувачі можуть обійти захист контенту. Відмінно підходить для членства або будь-яких обмежень на основі облікового запису."
+         ],
+         "Activate Users": [
+            "Активувати користувача"
+         ],
+         "Google ReCaptcha": [
+            "Google ReCaptcha"
+         ],
+         "Let users unlock your protected content with Google ReCaptcha. Simply add your API Key and use the Shortcode Generator to generate the shortcode.": [
+            "Дозвольте користувачам розблокувати захищений контент за допомогою Google ReCaptcha. Просто додайте свій ключ API та використовуйте генератор коротких кодів для генерації короткого коду."
+         ],
+         "Activate Google ReCaptcha": [
+            "Активувати Google ReCaptcha"
+         ],
+         "Unlock via Link": [
+            "Розблокувати через посилання"
+         ],
+         "Let users unlock your protected content with a link. The passwords are always encrypted in your URL. Additionally you can use your bit.ly account to automatically shorten your link.": [
+            "Дозвольте користувачам розблокувати захищений контент за посиланням. Паролі завжди зашифровані у вашому URL. Крім того, ви можете використовувати свій обліковий запис bit.ly для автоматичного скорочення вашого посилання."
+         ],
+         "Activate Unlock via Link": [
+            "Активувати розблокування через посилання"
+         ],
+         "Options": [
+            "Опції"
+         ],
+         "Cookie": [
+            "Cookie"
+         ],
+         "Use Cookie": [
+            "Використовувати Cookie"
+         ],
+         "Cookie Duration": [
+            "Строк дії cookie"
+         ],
+         "Duration (in days) for your cookie. Once a cookie expires, the user will have to enter the password again.": [
+            "Тривалість (кільксть діб) дії Cookie. Після закінчення терміну дії файлу cookie користувачеві необхідно знову ввести пароль."
+         ],
+         "AMP": [
+            "AMP"
+         ],
+         "Activate AMP Support": [
+            "Активувати підтримку AMP"
+         ],
+         "Uninstall": [
+            "Деінсталювати (видалити)"
+         ],
+         "Delete Plugin Options On Uninstall": [
+            "Видалити функції плагину та деінсталяції"
+         ],
+         "If checked, all plugin options will be deleted if the plugin is unstalled.": [
+            "Якщо прапорець встановлено, всі параметри плагіна будуть видалені під час деінсталяції."
+         ],
+         "When you use a large set of passwords in your shortcode then create a password list. After the list creation you can copy the shortcode and it instead.": [
+            "Коли ви використовуєте великий набір паролів у вашому шорткоді, то створіть список паролів. Після створення списку можна скопіювати шорткод і замість нього."
+         ],
+         "Password lists": [
+            "Список паролів"
+         ],
+         "Want to be a Pro?": [
+            "Що є у версії Pro?"
+         ],
+         "Create Password Lists": [
+            "Створіть список паролів"
+         ],
+         "Expire / One time passwords": [
+            "Строк дії / Одноразові паролі"
+         ],
+         "bit.ly URL Shortener": [
+            "bit.ly URL Shortener"
+         ],
+         "All future addons": [
+            "Всі наступні доповлення"
+         ],
+         "Awesome Support": [
+            "Пріоритетна підтримка"
+         ],
+         "Get it now": [
+            "Отримати зараз"
+         ],
+         "Need help?": [
+            "Потрібна допомога?"
+         ],
+         "I have an documention for every detail on the configuration of passster.": [
+            "У мене є документація щодо кожної деталі конфігурації Passster."
+         ],
+         "Read the Docs": [
+            "Читати документи"
+         ],
+         "Thanks for using <b>Passster</b>! After adding a shortcode to your content you can begin to modify text and design settings of Passster in your <a href=\"%s\">customizer</a>.": [
+            "Дякуємо за використання <b>Passster</b>! Після додавання шорткоду до свого контенту ви можете почати змінювати текст та налаштування дизайну Passster у своєму<a href=\"%s\">налаштувальнику</a>."
+         ],
+         "Add New Password List": [
+            "Додати новий список паролів"
+         ],
+         "New Password List": [
+            "Новий список паролів"
+         ],
+         "Edit Password List": [
+            "Редагувати список паролів"
+         ],
+         "View Password List": [
+            "Подивитись список паролів"
+         ],
+         "All Password Lists": [
+            "Всі спискі паролів"
+         ],
+         "Search Password Lists": [
+            "Шукати список паролів"
+         ],
+         "Parent Password List": [
+            "Батьківській список паролів"
+         ],
+         "No Password Lists found.": [
+            "Список паролів не знайдено."
+         ],
+         "No Password Lists found in Trash.": [
+            "Списки паролів у корзині не знайдено."
+         ],
+         "Manageable password lists": [
+            "Керування списками паролів"
+         ],
+         "General": [
+            "Загальні"
+         ],
+         "Background Color": [
+            "Колір фону"
+         ],
+         "Change the background color of the form": [
+            "Змінити колір фону форми"
+         ],
+         "Padding": [
+            "Відступи"
+         ],
+         "Padding in PX": [
+            "Відступи в PX"
+         ],
+         "Margin": [
+            "Поля"
+         ],
+         "Margin in PX": [
+            "Поля в PX"
+         ],
+         "Form Instructions": [
+            "Конструктор форми"
+         ],
+         "Headline Font Size": [
+            "Шрифт заголовка"
+         ],
+         "Font size in PX": [
+            "Розмір шрифта заголовка"
+         ],
+         "Headline Font Weight": [
+            "Товщина шрифта заголовка"
+         ],
+         "Headline Color": [
+            "Колір заголовка"
+         ],
+         "This content is password-protected. Please verify with a password to unlock the content.": [
+            "Цей контент захищений паролем. Будь ласка, підтвердьте пароль, щоб розблокувати вміст."
+         ],
+         "Font Size": [
+            "Розмір шрифта"
+         ],
+         "Font Weight": [
+            "Товщина шрифта"
+         ],
+         "Text Color": [
+            "Колір тексту"
+         ],
+         "Error Message": [
+            "Повідомлення про помилку"
+         ],
+         "Something went wrong. Please try again.": [
+            "Щось пішло не так. Будь ласка, спробуйте ще раз."
+         ],
+         "Button": [
+            "Кнопка"
+         ],
+         "Text Color (Hover)": [
+            "Текст на кнопці"
+         ],
+         "Background Color (Hover)": [
+            "Колір фона при наведеннї"
+         ],
+         "Add new Password List": [
+            "Додати новий список паролів"
+         ],
+         "Copy Link": [
+            "Скопиювати посилання"
+         ],
+         "Choose File": [
+            "Вибрати файл"
+         ],
+         "Choose Image": [
+            "Вибрати зображення"
+         ],
+         "View Passster settings": [
+            "Подивиться налаштунки Passster"
+         ],
+         "Settings": [
+            "Налаштування"
+         ],
+         "This plugin can not be activated because it requires a PHP version greater than %1$s. Your PHP version can be updated by your hosting company.": [
+            "Цей плагін не може бути активований, тому що для нього потрібна версія PHP більша, ніж %1$s. Вашу версію PHP може бути оновлено вашою хостинговою компанією."
+         ],
+         "go back": [
+            "назад"
+         ],
+         "This plugin can not be activated because it requires a WordPress version greater than %1$s. Please go to Dashboard &#9656; Updates to gran the latest version of WordPress .": [
+            "Цей плагін не може бути активований, тому що він вимагає версію WordPress більше, ніж %1$s. Перейдіть до розділу \"Оновлення панелі моніторингу\" &#9656; щоб дізнатися останню версію WordPress."
+         ],
+         "Plugin to password-protect portions of a Page or Post.": [
+            "Плагін для захисту паролем частини сторінки чи повідомлення."
+         ],
+         "patrickposner": [
+            "patrickposner"
+         ],
+         "post type general name\u0004Password Lists": [
+            "Списки паролів"
+         ],
+         "post type singular name\u0004Password List": [
+            "Список паролей"
+         ],
+         "admin menu\u0004Password Lists": [
+            "Списки паролей"
+         ],
+         "add new on admin bar\u0004Password List": [
+            "Список паролей"
+         ],
+         "content-protector\u0004Add New": [
+            "Додати новий"
+         ]
+      }
+   }
+}

@@ -135,44 +135,44 @@ class Animation extends Site {
         }
     }
 
-    public function add_custom_roles() {
-        add_role(
-            'benevole',
-            __('Bénévole'),
-            array(
-                'read' => true,
-                'access_benevoles_page' => true,
-            )
-        );
+    // public function add_custom_roles() {
+    //     add_role(
+    //         'benevole',
+    //         __('Bénévole'),
+    //         array(
+    //             'read' => true,
+    //             'access_benevoles_page' => true,
+    //         )
+    //     );
 
-        add_role(
-            'admin_benevole',
-            __('Admin Bénévole'),
-            array(
-                'read' => true,
-                'access_benevoles_page' => true,
-                'manage_benevoles' => true,
-            )
-        );
-    }
+        // add_role(
+        //     'admin_benevole',
+        //     __('Admin Bénévole'),
+        //     array(
+        //         'read' => true,
+        //         'access_benevoles_page' => true,
+        //         'manage_benevoles' => true,
+        //     )
+        // );
+    // }
 
-    public function add_admin_pages() {
-        add_menu_page(
-            __('Gestion des Bénévoles'),
-            __('Bénévoles'),
-            'manage_benevoles',
-            'gestion_benevoles',
-            array($this, 'render_benevoles_admin_page')
-        );
-    }
+    // public function add_admin_pages() {
+    //     add_menu_page(
+    //         __('Gestion des Bénévoles'),
+    //         __('Bénévoles'),
+    //         'manage_benevoles',
+    //         'gestion_benevoles',
+    //         array($this, 'render_benevoles_admin_page')
+    //     );
+    // }
 
-    public function render_benevoles_admin_page() {
-        echo '<div class="wrap">';
-        echo '<h1>Gestion des Bénévoles</h1>';
-        echo '<p>Cette page vous permet de gérer les bénévoles.</p>';
-        // Ajoutez ici le code HTML pour afficher et gérer les bénévoles
-        echo '</div>';
-    }
+    // public function render_benevoles_admin_page() {
+    //     echo '<div class="wrap">';
+    //     echo '<h1>Gestion des Bénévoles</h1>';
+    //     echo '<p>Cette page vous permet de gérer les bénévoles.</p>';
+    //     // Ajoutez ici le code HTML pour afficher et gérer les bénévoles
+    //     echo '</div>';
+    // }
 
     public function setup_shortcodes() {
         add_shortcode('custom_login_form', array($this, 'render_login_form'));
@@ -180,7 +180,66 @@ class Animation extends Site {
     }
 
     
-
+    // private function register_taxonomies() {
+    //     // Enregistrement de la taxonomie "genre" pour le type de publication "book"
+    //     $labels = array(
+    //         'name'              => _x('Genres', 'taxonomy general name', 'textdomain'),
+    //         'singular_name'     => _x('Genre', 'taxonomy singular name', 'textdomain'),
+    //         'search_items'      => __('Search Genres', 'textdomain'),
+    //         'all_items'         => __('All Genres', 'textdomain'),
+    //         'parent_item'       => __('Parent Genre', 'textdomain'),
+    //         'parent_item_colon' => __('Parent Genre:', 'textdomain'),
+    //         'edit_item'         => __('Edit Genre', 'textdomain'),
+    //         'update_item'       => __('Update Genre', 'textdomain'),
+    //         'add_new_item'      => __('Add New Genre', 'textdomain'),
+    //         'new_item_name'     => __('New Genre Name', 'textdomain'),
+    //         'menu_name'         => __('Genre', 'textdomain'),
+    //     );
+    
+    //     $args = array(
+    //         'hierarchical'      => true,
+    //         'labels'            => $labels,
+    //         'show_ui'           => true,
+    //         'show_admin_column' => true,
+    //         'query_var'         => true,
+    //         'rewrite'           => array('slug' => 'genre'),
+    //     );
+    
+        // register_taxonomy('genre', array('book'), $args);
+    
+        // // Enregistrement de la taxonomie "writer" pour le type de publication "book"
+        // $labels = array(
+        //     'name'                       => _x('Writers', 'taxonomy general name', 'textdomain'),
+        //     'singular_name'              => _x('Writer', 'taxonomy singular name', 'textdomain'),
+        //     'search_items'               => __('Search Writers', 'textdomain'),
+        //     'popular_items'              => __('Popular Writers', 'textdomain'),
+        //     'all_items'                  => __('All Writers', 'textdomain'),
+        //     'parent_item'                => null,
+        //     'parent_item_colon'          => null,
+        //     'edit_item'                  => __('Edit Writer', 'textdomain'),
+        //     'update_item'                => __('Update Writer', 'textdomain'),
+        //     'add_new_item'               => __('Add New Writer', 'textdomain'),
+        //     'new_item_name'              => __('New Writer Name', 'textdomain'),
+        //     'separate_items_with_commas' => __('Separate writers with commas', 'textdomain'),
+        //     'add_or_remove_items'        => __('Add or remove writers', 'textdomain'),
+        //     'choose_from_most_used'      => __('Choose from the most used writers', 'textdomain'),
+        //     'not_found'                  => __('No writers found.', 'textdomain'),
+        //     'menu_name'                  => __('Writers', 'textdomain'),
+        // );
+    
+        // $args = array(
+        //     'hierarchical'          => false,
+        //     'labels'                => $labels,
+        //     'show_ui'               => true,
+        //     'show_admin_column'     => true,
+        //     'update_count_callback' => '_update_post_term_count',
+        //     'query_var'             => true,
+        //     'rewrite'               => array('slug' => 'writer'),
+        // );
+    
+        // register_taxonomy('writer', 'book', $args);
+    }
+    
      
    
 

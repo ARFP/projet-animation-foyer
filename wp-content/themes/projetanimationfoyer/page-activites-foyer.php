@@ -1,5 +1,5 @@
 <?php
-<?php
+
 /**
  * Template Name: Page Bénévoles
  */
