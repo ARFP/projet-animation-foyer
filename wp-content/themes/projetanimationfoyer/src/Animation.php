@@ -8,6 +8,9 @@ use Timber\Menu;
 use Twig\Extension\StringLoaderExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use \PDO;
+use \PDOException;
+use \RuntimeException;
 
 class Animation extends Site {
 
@@ -34,7 +37,7 @@ class Animation extends Site {
         add_action('wp_loaded', array($this, 'setup_benevoles_page_context'));
         add_action('admin_menu', array($this, 'add_admin_pages'));
         add_action('wp_loaded', array($this, 'handle_contact_form_submission'));
-        
+        add_action('admin_post_manage_benevoles', array($this, 'manage_benevoles')); /// HOOK BACCK-END
     }
 
     private function register_filters() {
@@ -166,58 +169,9 @@ class Animation extends Site {
             }
         }
     
-        // Récupérer les bénévoles
-        public function get_benevoles() {
-            $pdo = $this->symfony_db_connection();
-            $stmt = $pdo->query("SELECT * FROM benevole");
-    
-            return $stmt->fetchAll();
-        }
-    
-        // Ajouter un bénévole
-        public function add_benevole($prenom, $nom, $telephone, $poste) {
-            $pdo = $this->symfony_db_connection();
-            $stmt = $pdo->prepare("INSERT INTO benevole (prenom, nom, telephone, poste) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$prenom, $nom, $telephone, $poste]);
-        }
-    
-        // Supprimer un bénévole
-        public function delete_benevole($id) {
-            $pdo = $this->symfony_db_connection();
-            $stmt = $pdo->prepare("DELETE FROM benevole WHERE id = ?");
-            $stmt->execute([$id]);
-        }
-    
-        // Gérer les bénévoles (ajout/suppression)
-        public function manage_benevoles() {
-            if (!current_user_can('manage_options')) {
-                wp_die('Unauthorized user');
-            }
-    
-            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                if (isset($_POST['add_benevole'])) {
-                    $this->add_benevole($_POST['prenom'], $_POST['nom'], $_POST['telephone'], $_POST['poste']);
-                } elseif (isset($_POST['delete_benevole'])) {
-                    $this->delete_benevole($_POST['benevole_id']);
-                }
-            }
-    
-            wp_redirect($_SERVER['HTTP_REFERER']);
-            exit;
-        }
-    // Mise en place de la page d'administration des bénévoles
-        public function add_admin_pages() {
-            add_menu_page(
-                __('Gestion des Bénévoles'),
-                __('Bénévoles'),
-                'manage_options',
-                'gestion_benevoles',
-                array($this, 'render_benevoles_admin_page')
-            );
-        }
-    
 
-        }
+    
+   
     
     
     
