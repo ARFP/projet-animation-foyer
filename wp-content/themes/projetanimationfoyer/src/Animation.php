@@ -150,9 +150,9 @@ class Animation extends Site {
 
         private function symfony_db_connection() {
             $host = 'localhost';
-            $dbname = 'nom_de_votre_base_de_donnees_symfony';
-            $username = 'votre_utilisateur_symfony';
-            $password = 'votre_mot_de_passe_symfony';
+            $dbname = 'foyer';
+            $username = 'root';
+            $password = '';
             $charset = 'utf8';
     
             $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
@@ -168,8 +168,56 @@ class Animation extends Site {
                 throw new RuntimeException('Connection failed: ' . $e->getMessage());
             }
         }
-    
 
+            // Récupérer les bénévoles
+    public function get_benevoles() {
+        $pdo = $this->symfony_db_connection();
+        $stmt = $pdo->query("SELECT * FROM benevole");
+
+        return $stmt->fetchAll();
+    }
+    
+    // Supprimer un bénévole
+    public function delete_benevole($id) {
+        $pdo = $this->symfony_db_connection();
+        $stmt = $pdo->prepare("DELETE FROM benevole WHERE id = ?");
+        $stmt->execute([$id]);
+    }
+
+        // Gérer les bénévoles (ajout/suppression)
+        public function manage_benevoles() {
+            if (!current_user_can('manage_options')) {
+                wp_die('Unauthorized user');
+            }
+    
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['add_benevole'])) {
+                    $this->add_benevole($_POST['prenom'], $_POST['nom'], $_POST['telephone'], $_POST['poste']);
+                } elseif (isset($_POST['delete_benevole'])) {
+                    $this->delete_benevole($_POST['benevole_id']);
+                }
+            }
+    
+            wp_redirect($_SERVER['HTTP_REFERER']);
+            exit;
+        }
+    
+        public function add_admin_pages() {
+            add_menu_page(
+                __('Gestion des Bénévoles'),
+                __('Bénévoles'),
+                'manage_options',
+                'gestion_benevoles',
+                array($this, 'render_benevoles_admin_page')
+            );
+        }
+    
+        public function render_benevoles_admin_page() {
+            $context = Timber::context();
+            $context['benevoles'] = $this->get_benevoles();
+            Timber::render('admin-benevoles.twig', $context);
+        }
+    
     
    
     
