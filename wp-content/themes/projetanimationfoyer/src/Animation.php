@@ -87,6 +87,7 @@ class Animation extends Site {
 
     public function enqueue_scripts() {
         wp_enqueue_script('internal-script', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
+        wp_enqueue_script('vue', 'https://unpkg.com/vue@3/dist/vue.global.js', array(), null, true);
     }
 
     public function enqueue_custom_styles() {
@@ -134,6 +135,98 @@ class Animation extends Site {
             }
         }
     }
+       
+
+        public function setup_shortcodes() {
+            add_shortcode('custom_login_form', array($this, 'render_login_form'));
+            add_shortcode('contact_form', array($this, 'render_contact_form'));
+        }
+
+        // BACK-END
+        // Connexion à la base de données de l'Annuaire des bénévoles
+
+        private function symfony_db_connection() {
+            $host = 'localhost';
+            $dbname = 'nom_de_votre_base_de_donnees_symfony';
+            $username = 'votre_utilisateur_symfony';
+            $password = 'votre_mot_de_passe_symfony';
+            $charset = 'utf8';
+    
+            $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
+    
+            try {
+                return new PDO($dsn, $username, $password, $options);
+            } catch (PDOException $e) {
+                throw new RuntimeException('Connection failed: ' . $e->getMessage());
+            }
+        }
+    
+        // Récupérer les bénévoles
+        public function get_benevoles() {
+            $pdo = $this->symfony_db_connection();
+            $stmt = $pdo->query("SELECT * FROM benevole");
+    
+            return $stmt->fetchAll();
+        }
+    
+        // Ajouter un bénévole
+        public function add_benevole($prenom, $nom, $telephone, $poste) {
+            $pdo = $this->symfony_db_connection();
+            $stmt = $pdo->prepare("INSERT INTO benevole (prenom, nom, telephone, poste) VALUES (?, ?, ?, ?)");
+            $stmt->execute([$prenom, $nom, $telephone, $poste]);
+        }
+    
+        // Supprimer un bénévole
+        public function delete_benevole($id) {
+            $pdo = $this->symfony_db_connection();
+            $stmt = $pdo->prepare("DELETE FROM benevole WHERE id = ?");
+            $stmt->execute([$id]);
+        }
+    
+        // Gérer les bénévoles (ajout/suppression)
+        public function manage_benevoles() {
+            if (!current_user_can('manage_options')) {
+                wp_die('Unauthorized user');
+            }
+    
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['add_benevole'])) {
+                    $this->add_benevole($_POST['prenom'], $_POST['nom'], $_POST['telephone'], $_POST['poste']);
+                } elseif (isset($_POST['delete_benevole'])) {
+                    $this->delete_benevole($_POST['benevole_id']);
+                }
+            }
+    
+            wp_redirect($_SERVER['HTTP_REFERER']);
+            exit;
+        }
+    // Mise en place de la page d'administration des bénévoles
+        public function add_admin_pages() {
+            add_menu_page(
+                __('Gestion des Bénévoles'),
+                __('Bénévoles'),
+                'manage_options',
+                'gestion_benevoles',
+                array($this, 'render_benevoles_admin_page')
+            );
+        }
+    
+
+        }
+    
+    
+    
+    
+    
+    
+        
+}
+
 
     // public function add_custom_roles() {
     //     add_role(
@@ -174,12 +267,9 @@ class Animation extends Site {
     //     echo '</div>';
     // }
 
-    public function setup_shortcodes() {
-        add_shortcode('custom_login_form', array($this, 'render_login_form'));
-        add_shortcode('contact_form', array($this, 'render_contact_form'));
-    }
 
-    
+
+
     // private function register_taxonomies() {
     //     // Enregistrement de la taxonomie "genre" pour le type de publication "book"
     //     $labels = array(
@@ -238,11 +328,11 @@ class Animation extends Site {
         // );
     
         // register_taxonomy('writer', 'book', $args);
-    }
+    // }
     
      
-   
+
 
    
 
-}
+
