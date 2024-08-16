@@ -1,0 +1,98 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+         <section class="management">
+            <div class="listeNom" > 
+            	<select @change="filterBenevole"  classe="liste">		
+					<option class="optionText" ><p class="white">Selectionnez un bénévole</p></option>
+				{% for benevole in benevole %} 
+					<option class="optionText" >{{ benevole.prenom }} {{ benevole.nom }}</option>	
+				{% endfor %}
+            </select>
+			
+            </div> 
+            <div class="listePoste">
+                <select @change="filterResponsable" classe="listeRes">
+                    <option class="optionText"><p>Selectionnez un responsable</p></option>
+                    <option class="optionText"></option>
+                </select>
+            </div>
+        </section> 
+
+		<div>
+        {% verbatim %} 
+        <section class="benevole">
+		
+			
+		<table class="benevoleTable" id="benevoleTable">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Prenom</th>				
+			</thead>
+            <tbody>
+                <tr v-for="benevole of listeBenevolesFiltered">
+                    <td>{{ benevole.prenom }}</td>
+                    <td>{{ benevole.nom }}</td>
+                    <td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td>                           
+                </tr>
+            </tbody>
+        </table>
+{% endverbatim %}
+			 {# <tbody>
+				{% for benevole in benevole %}
+					<tr>
+						<td>{{ benevole.prenom }}</td>
+						<td>{{ benevole.nom }}</td>
+						<td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td> 		
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>  #}
+		
+		</div>
+		
+		<div class="adminGate">
+		       <button class="adminLog" @click="adminPortal()">Admin</button>			
+        </div> 
+        </section>
+		
+
+{# 		
+			 <tbody>
+                <tr v-for="benevole of listeBenevolesFiltered">
+                    <td>{% verbatim %}{{ benevole.prenom }}	{% endverbatim %}</td>
+                    <td>{% verbatim %} {{ benevole.nom }}	{% endverbatim %}</td>
+                    <td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td>                           
+                </tr>
+            </tbody>
+        </table> #}
+	
+	{% endblock %}
+
+        {# <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const adminButton = document.querySelector('.adminLog');
+            adminButton.addEventListener('click', adminPortal);
+            });
+
+			document.addEventListener("DOMContentLoaded", function () {
+        	const selectListe = document.querySelector('.liste');
+
+        	selectListe.addEventListener('change', function () {
+            const selectedBenevole = this.value;
+            
+            fetchData(selectedBenevole);
+        });
+    });
+
+
+
+
+
+        </script> #}
+
+     
+
+{% endblock %}

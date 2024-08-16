@@ -1,0 +1,13 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+      {% include 'parts/top-page.twig' %}
+
+        {% include 'benevole.twig' with {'benevole': benevole} %}        
+
+        <div class="bottom-wrapper">
+            {% include 'parts/bottom-wrapper.twig' %}
+        </div>
+
+{% endblock %}
