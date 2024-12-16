@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+{% include 'parts/top-page.twig' %}
+    <div class="single-wrapper">
+        <div class="single-article>
+        <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
+            
+            <section class="single-article-content">               
+
+                {# <img src="{{ post.thumbnail.src|resize(1200, 300) }}" /> #}
+                <div class="single-article-body">{{ post.content }}</div>
+                                <p class="single-blog-author">
+                    <span>By</span>
+                    <a href="{{ post.author.path }}">{{ post.author.name }}</a>
+                    <span>&bull;</span>
+                    <time datetime="{{ post.date|date('Y-m-d H:i:s') }}">{{ post.date }}</time>
+                </p>
+            </section>
+            <section class="comment-box">
+                <div class="comments">
+                    {% if post.comments %}
+                        {% for cmt in post.comments %}
+                            {% include 'parts/comment.twig' with {
+                                comment: cmt
+                            } %}
+                        {% endfor %}
+                    {% endif %}
+                    
+                </div>
+
+                {% if post.comment_status == 'closed' %}
+                    <p>il n'est plus possible des laisser des avis sur cette publication</p>
+                {% else %}
+                    {% include 'parts/comment-form.twig' %}
+                {% endif %}
+            </section>
+        </article>
+        </div>
+    </div>
+        <div class="bottom-wrapper">
+      {% include 'parts/bottom-wrapper.twig' %}
+    </div>
+{% endblock %}

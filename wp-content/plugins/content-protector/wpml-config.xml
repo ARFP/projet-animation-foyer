@@ -1,0 +1,103 @@
+<wpml-config>
+  <custom-types>
+    <custom-type translate="1">protected_areas</custom-type>
+    <custom-type translate="0">password_lists</custom-type>
+  </custom-types>
+  <custom-fields>
+    <custom-field action="ignore">passster_activate_global_protection</custom-field>
+    <custom-field action="ignore">passster_activate_protection</custom-field>
+    <custom-field action="ignore">passster_protection_type</custom-field>
+    <custom-field action="ignore">passster_password</custom-field>
+    <custom-field action="ignore">passster_expire_passwords</custom-field>
+    <custom-field action="ignore">passster_expire_usage</custom-field>
+    <custom-field action="ignore">passster_expire_time</custom-field>
+    <custom-field action="ignore">passster_activate_bitly</custom-field>
+    <custom-field action="ignore">passster_redirect_url</custom-field>
+    <custom-field action="ignore">passster_user_restriction_type</custom-field>
+    <custom-field action="ignore">passster_user_restriction</custom-field>
+    <custom-field action="ignore">passster_headline</custom-field>
+    <custom-field action="ignore">passster_instruction</custom-field>
+    <custom-field action="ignore">passster_placeholder</custom-field>
+    <custom-field action="ignore">passster_button</custom-field>
+    <custom-field action="ignore">passster_id</custom-field>
+    <custom-field action="ignore">passster_area_shortcode</custom-field>
+    <custom-field action="ignore">passster_passwords</custom-field>
+    <custom-field action="ignore">passster_activate_user_restriction</custom-field>
+    <custom-field action="ignore">passster_password_list</custom-field>
+    <custom-field action="ignore">passster_activate_overwrite_defaults</custom-field>
+    <custom-field action="ignore">passster_activate_misc_settings</custom-field>
+    <custom-field action="ignore">passster_expire_mode</custom-field>
+  </custom-fields>
+  <admin-texts>
+    <key name="passster">
+      <key name="_locale"/>
+      <key name="headline"/>
+      <key name="instruction"/>
+      <key name="placeholder"/>
+      <key name="error"/>
+      <key name="button_label"/>
+      <key name="password_length"/>
+      <key name="include_uppercase"/>
+      <key name="include_numbers"/>
+      <key name="show_password"/>
+      <key name="form_max_width"/>
+      <key name="form_background_color"/>
+      <key name="form_margin">
+        <key name="top"/>
+        <key name="left"/>
+        <key name="right"/>
+        <key name="bottom"/>
+      </key>
+      <key name="form_padding">
+        <key name="top"/>
+        <key name="left"/>
+        <key name="right"/>
+        <key name="bottom"/>
+      </key>
+      <key name="form_border_radius"/>
+      <key name="headline_font_color"/>
+      <key name="headline_font_size"/>
+      <key name="headline_font_weight"/>
+      <key name="instruction_font_color"/>
+      <key name="instruction_font_size"/>
+      <key name="instruction_font_weight"/>
+      <key name="button_background_color"/>
+      <key name="button_font_color"/>
+      <key name="button_background_color_hover"/>
+      <key name="button_font_color_hover"/>
+      <key name="button_margin">
+        <key name="top"/>
+        <key name="left"/>
+        <key name="right"/>
+        <key name="bottom"/>
+      </key>
+      <key name="button_padding">
+        <key name="top"/>
+        <key name="left"/>
+        <key name="right"/>
+        <key name="bottom"/>
+      </key>
+      <key name="button_border_radius"/>
+      <key name="button_font_size"/>
+      <key name="button_font_weight"/>
+      <key name="unlock_mode"/>
+      <key name="disable_cookie"/>
+      <key name="cookie_duration"/>
+      <key name="cookie_duration_unit"/>
+      <key name="third_party_shortcodes"/>
+      <key name="use_concurrent"/>
+      <key name="number_of_concurrents"/>
+      <key name="recaptcha_version"/>
+      <key name="recaptcha_site_key"/>
+      <key name="recaptcha_secret"/>
+      <key name="recaptcha_language"/>
+      <key name="bitly_token"/>
+      <key name="activate_global_protection"/>
+      <key name="global_protection_id"/>
+      <key name="exclude_pages">
+        <key name="0"/>
+        <key name="1"/>
+      </key>
+    </key>
+  </admin-texts>
+</wpml-config>

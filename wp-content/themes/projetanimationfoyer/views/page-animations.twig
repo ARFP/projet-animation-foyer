@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+   {% include 'parts/top-page.twig' %}
+    {% for post in posts %}
+    <article class="post-type-{{ post.type }}" id="post-{{ post.id }}">
+        <section class="article-content">
+        
+            <div class="article-body">{{ post.content }}</div>
+        </section>
+    </article>
+    {% endfor %}
+
+<div class="bottom-wrapper">
+      {% include 'parts/bottom-wrapper.twig' %}
+</div>
+{% endblock %}

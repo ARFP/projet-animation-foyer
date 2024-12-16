@@ -1,0 +1,690 @@
+{
+   "domain": "content-protector",
+   "locale_data": {
+      "content-protector": {
+         "": {
+            "domain": "content-protector",
+            "plural_forms": "nplurals=2; plural=(n != 1);",
+            "lang": "de_DE"
+         },
+         "No Area": [
+            "Keine Area"
+         ],
+         "Protected Area": [
+            "Geschützter Bereich"
+         ],
+         "Select protected area": [
+            "Geschützten Bereich auswählen"
+         ],
+         "Create a new area": [
+            "Geschützten Bereich erstellen"
+         ],
+         "Get updated areas": [
+            "Aktualisierte Bereiche laden"
+         ],
+         "Show Password": [
+            "Passwort anzeigen"
+         ],
+         "This is just a preview. To actually unlock the content visit the post/page on your website.": [
+            "Das ist nur eine Vorschau. Um den Inhalt freizuschalten schaue dir den Beitrag/die Seite auf deiner Website an."
+         ],
+         "No Password List": [
+            "Keine Passwort-Liste"
+         ],
+         "No Role": [
+            "Keine Nutzerrolle"
+         ],
+         "Activate Protection": [
+            "Passwortschutz aktivieren"
+         ],
+         "Protect Child Pages": [
+            "Kind-Seiten schützen"
+         ],
+         "Protection Mode": [
+            "Schutz-Modus"
+         ],
+         "Password": [
+            "Passwort"
+         ],
+         "Passwords": [
+            "Passwörter"
+         ],
+         "Password List": [
+            "Passwort Liste"
+         ],
+         "reCAPTCHA": [
+            "reCAPTCHA"
+         ],
+         "Generate password": [
+            "Passwort generieren"
+         ],
+         "Number of passwords to generate": [
+            "Anzahl von Passwörtern die generiert werden sollen"
+         ],
+         "How many passwords do you want to generate?": [
+            "Wie viele Passwörter möchtest du generieren?"
+         ],
+         "User Restriction": [
+            "Nutzer-Beschränkung"
+         ],
+         "Choose User Restriction Type": [
+            "Wähle eine Nutzer-Beschränkung"
+         ],
+         "Username": [
+            "Nutzername"
+         ],
+         "User Role": [
+            "Nutzerrolle"
+         ],
+         "Overwrite Defaults": [
+            "Texte überschreiben"
+         ],
+         "Headline": [
+            "Überschrift"
+         ],
+         "This is the headline of your password-protection form.": [
+            "Das ist die Überschrift deines Passwort-Formulars."
+         ],
+         "Instruction": [
+            "Einleitungstext"
+         ],
+         "This content is password-protected. Please verify with a password to unlock the content.": [
+            "Dieser Inhalt ist passwortgeschützt. Bitte gib dein Passwort ein um den Inhalt freizuschalten."
+         ],
+         "The instruction text appears before the password input field. Use it for hints or additional explanation.": [
+            "Der Einleitungstext wird vor dem Eingabefeld des Passworts angezeigt. Nutze ihn für Hinweise oder zusätzliche Erklärungen."
+         ],
+         "Placeholder": [
+            "Platzhalter"
+         ],
+         "Enter your password..": [
+            "Gib dein Passwort ein.."
+         ],
+         "Edit the placeholder text of the password field.": [
+            "Bearbeite den Platzhalter deines Passwort-Felds."
+         ],
+         "Button Label": [
+            "Button Beschriftung"
+         ],
+         "Unlock": [
+            "Freischalten"
+         ],
+         "Edit the text that appears on the button.": [
+            "Bearbeite den Text der innerhalb des Buttons dargestellt wird."
+         ],
+         "Unique ID": [
+            "Eindeutige ID"
+         ],
+         "my-custom-id": [
+            "meine-eigene-id"
+         ],
+         "Give your password form a unique ID.": [
+            "Gib deinem Passwort-Formular eine einzigartige ID."
+         ],
+         "Misc Settings": [
+            "Weitere Einstellungen"
+         ],
+         "Hide/Show": [
+            "Anzeigen/Ausblenden"
+         ],
+         "No": [
+            "Nein"
+         ],
+         "Yes": [
+            "Ja"
+         ],
+         "Hide this password form. It will not show the password form, but it will show the unlocked content.": [
+            "Verstecke das Passwort-Formular. Es wird nicht auf der Seite angezeigt, aber der freigeschaltete Inhalt schon."
+         ],
+         "Redirect": [
+            "Weiterleitung"
+         ],
+         "Redirect the user to this URL once they submit the correct password.": [
+            "Du kannst hier eine URL eintragen zu welcher der Besucher weitergeleitet wird, sobald er das korrekte Passwort eingegeben hat."
+         ],
+         "Copied!": [
+            "Kopiert!"
+         ],
+         "Copy Shortcode": [
+            "Shortcode kopieren"
+         ],
+         "Copied Link!": [
+            "Link kopiert!"
+         ],
+         "Copy Unlock Link": [
+            "Freischaltlink kopieren"
+         ],
+         "Add Passwords": [
+            "Passwörter hinzufügen"
+         ],
+         "password1,password2,password3": [
+            "passwort1,passwort2,passwort3"
+         ],
+         "Add a comma-separated list of passwords.": [
+            "Füge eine komma-getrennte Liste mit Passwörtern in dieses Feld ein."
+         ],
+         "How many passwords do you want to generate? We automatically add the generated passwords to your password list.": [
+            "Wie viele Passwörter möchtest du generieren? Wir fügen die generierten Passwörter automatisch deiner Liste hinzu."
+         ],
+         "Generate passwords": [
+            "Passwörter generieren"
+         ],
+         "Expire Passwords": [
+            "Passwörter ablaufen lassen"
+         ],
+         "Choose an expiration mode": [
+            "Wähle deinen Ablauf-Modus"
+         ],
+         "First Usage": [
+            "Nach erstmaliger Nutzung"
+         ],
+         "Number of usages": [
+            "Passwort verschwindet nach X Nutzungen"
+         ],
+         "By Interval": [
+            "Nach Intervall"
+         ],
+         "Expire Password after usage": [
+            "Passwörter nach Nutzung entfernen"
+         ],
+         "The password will be immediately removed from the password list after it's first usage.": [
+            "Das Passwort wird sofort nach Freischaltung des geschützten Bereichs aus der Liste entfernt."
+         ],
+         "Expire after number of usage": [
+            "Das Passwort wird nach der konfigurierten Menge an Freischaltungen aus der Liste entfernt"
+         ],
+         "The password will be removed from the password list after the number of usage is reached.": [
+            "Das Passwort wird nach der konfigurierten Anzahl der Nutzungen entfernt."
+         ],
+         "Expire after a time interval": [
+            "Passwort verschwindet nach dem definierten Zeitinvervall (beginnend mit der erstmaligen Nutzung des Passworts)"
+         ],
+         "Expire the password after a specific time interval. It starts tracking once the password is used for the first time.": [
+            "Passwort verschwindet nach dem definierten Zeitinvervall (beginnend mit der erstmaligen Nutzung des Passworts)"
+         ],
+         "Time Unit": [
+            "Zeit-Einheit"
+         ],
+         "Days": [
+            "Tage"
+         ],
+         "Hours": [
+            "Stunden"
+         ],
+         "Weeks": [
+            "Wochen"
+         ],
+         "Months": [
+            "Monate"
+         ],
+         "Form width": [
+            "Formular-Breite"
+         ],
+         "Save Settings": [
+            "Einstellungen speichern"
+         ],
+         "General": [
+            "Allgemein"
+         ],
+         "Design": [
+            "Design"
+         ],
+         "Advanced": [
+            "Erweiterte Optionen"
+         ],
+         "Global Protection": [
+            "Globaler Schutz"
+         ],
+         "External Services": [
+            "Externe Dienste"
+         ],
+         "System Status": [
+            "System Status"
+         ],
+         "Utilities": [
+            "Werkzeuge"
+         ],
+         "Documentation": [
+            "Dokumentation"
+         ],
+         "Changelog": [
+            "Changelog"
+         ],
+         "Passster Pro": [
+            "Passster Pro"
+         ],
+         "Sorry, there was an error.": [
+            "Entschuldige, es gab einen Fehler."
+         ],
+         "Usage Mode": [
+            "Nutzungs-Modus"
+         ],
+         "Use Ajax": [
+            "Ajax benutzen"
+         ],
+         "You are using Ajax for unlocking content. Make sure to add any shortcodes of a page into the Third-Party-Shortcodes setting.": [
+            "Du benutzt Ajax zur Freischaltung der Inhalte. Stelle sicher, dass du alle Shortcodes auf der geschützten Seite innerhalb der Dritt-Anbieter-Shortcodes hinterlegst."
+         ],
+         "Unlock content with Ajax (no reload). It is not recommended for entire pages or when using a Third-Party Page Builder.": [
+            "Den Inhalt ohne Neuladen freischalten (Ajax). Es wird nicht empfohlen diese Option für komplette Seiten/Beiträge oder in Kombination mit einem Drittanbieter-Pagebuilder (Elementor, Divi..) zu nutzen."
+         ],
+         "Disable Cookie": [
+            "Keinen Cookie verwenden"
+         ],
+         "Each time a user visits the protected content it needs to be unlocked again.": [
+            "Jedes Mal wenn ein Besucher den geschützten Inhalt aufruft, muss er das Passwort erneut eingeben."
+         ],
+         "The password is stored in a cookie. Next time the content is unlocked automatically.": [
+            "Das Passwort wird in einem Cookie gespeichert. Das nächste Mal wenn der Besucher die Seite aufruft, wird der Inhalt automatisch freigeschalten."
+         ],
+         "Cookie Lifetime": [
+            "Cookie Laufzeit"
+         ],
+         "The lifetime of your cookie is based on this number and the lifetime unit below. Once a cookie expires, the user will need to enter the password again.": [
+            "Die Laufzeit des Cookies wird basierend auf den Einstellungen von Einheit und Dauer definiert. Sobald ein Cookie abläuft oder entfernt wird, muss der Besucher das Passwort erneut eingeben."
+         ],
+         "Cookie Lifetime Unit": [
+            "Cookie Laufzeit Einheit"
+         ],
+         "Minutes": [
+            "Minuten"
+         ],
+         "Third-Party-Shortcodes": [
+            "Drittanbieter Shortcodes"
+         ],
+         "Add a comma separated list of shortcodes you want to use inside of Passster. You can also use {post-id} to add the ID of the current page/post dynamically. ": [
+            "Füge eine komma-getrennte Liste an Shortcodes hinzu, die du in Passster verwenden möchstest. Du kannst auch {post-id} als Platzhalter für die jeweilige Post-ID benutzen. "
+         ],
+         "Concurrent Usage": [
+            "Gleichzeitige Logins"
+         ],
+         "Track Concurrent Usage": [
+            "Gleichzeitige Logins aufzeichnen"
+         ],
+         "Track and prevent concurrent usage of the same password.": [
+            "Überwache und verhindere die gleichzeitige Nutzung des selben Passworts."
+         ],
+         "Do not track concurrent usages. A password can be used without any limitations to unlock your content.": [
+            "Keine Aufzeichnung von gleichzeitigen Nutzungen. Ein Passwort kann ohne Limitierungen genutzt werden um Inhalte freizuschalten."
+         ],
+         "Number of Allowed Concurrent Usages": [
+            "Anzahl der erlaubten gleichzeitigen Freischaltungen"
+         ],
+         "Limit the number of logins with one password at the same time. It will create a custom database table to track the usage of the passwords. It uses the current IP of the user to recognize them. You can use the shortcode [passster-logout] to handle the logout.": [
+            "Begrenze die Anzahl der Logins mit einem Passwort zur gleichen Zeit. Passster erstellt dafür eine eigene Datenbank-Tabelle und überwacht die Nutzung bei jedem Login. Es nutzt dafür die IP-Addresse des Nutzers und das verwendete Passwort für die Identifizierung. Du kannst den Shortcode [passster-logout] nutzen, um deinen Nutzern die Möglichkeit des Logouts anzubieten."
+         ],
+         "Reset Concurrent Data": [
+            "Aufzeichnung von gleichzeitigen Logins zurücksetzen"
+         ],
+         "Concurrent data resetted successfully.": [
+            "Nutzungsdaten für gleichzeitige Logins wurden zurückgesetzt."
+         ],
+         "Settings saved successfully.": [
+            "Einstellungen erfolgreich gespeichert."
+         ],
+         "Small": [
+            "Klein"
+         ],
+         "Medium": [
+            "Mittel"
+         ],
+         "Big": [
+            "Groß"
+         ],
+         "Edit the overall design of your password form on this page.": [
+            "Passe das generelle Design deines Passwort-Formulars an."
+         ],
+         "Password Form": [
+            "Passwort-Formular"
+         ],
+         "Background Color": [
+            "Hintergrundfarbe"
+         ],
+         "Spacing Controls": [
+            "Kontrolliere Abstände"
+         ],
+         "Margin": [
+            "Außenabstand"
+         ],
+         "Margin is the space around an element. The higher the value the more space is around the password form.": [
+            "Der Außenabstand eines Elements. Je größer der Wert, desto größer der Abstand um das Passwort-Formular."
+         ],
+         "Padding": [
+            "Innenabstand"
+         ],
+         "Padding is the space between an element and its content. The higher the value the more space is inside the password form.": [
+            "Der Innenabstand eines Elements. Je größer der Wert, desto größer der Abstand innerhalb des Passwort-Formulars."
+         ],
+         "Border Radius": [
+            "Abrundung"
+         ],
+         "The higher the border radius the more rounded are the corners of the form.": [
+            "Je größer der Wert der Abrundung, je runder ist das Passwort-Formular."
+         ],
+         "Add a checkbox to show the password before submitting.": [
+            "Checkbox zum Anzeigen des Passworts hinzufügen."
+         ],
+         "Do not add a checkbox to view the password": [
+            "Keine Checkbox anzeigen"
+         ],
+         "Font Controls": [
+            "Schrift Einstellungen"
+         ],
+         "Color": [
+            "Schriftfarbe"
+         ],
+         "Font weight": [
+            "Schriftstärke"
+         ],
+         "Button": [
+            "Button"
+         ],
+         "Color Controls": [
+            "Farben Einstellungen"
+         ],
+         "Font Color": [
+            "Schriftfarbe"
+         ],
+         "Background Color (Hover)": [
+            "Hintergrundfarbe (Hover)"
+         ],
+         "Font Color (Hover)": [
+            "Schriftfarbe (Hover)"
+         ],
+         "The higher the border radius the more rounded are the corners of the button.": [
+            "Je größer die Abrundung, desto runder ist der Button."
+         ],
+         "reCAPTCHA Type": [
+            "reCAPTCHA Typ"
+         ],
+         "Google reCAPTCHA V2 (Checkbox)": [
+            "Google reCAPTCHA V2(Checkbox)"
+         ],
+         "Google reCAPTCHA V3 (invisible CAPTCHA)": [
+            "Google reCAPTCHA V3 (invisible CAPTCHA)"
+         ],
+         "hCAPTCHA": [
+            "hCAPTCHA"
+         ],
+         "Site Key": [
+            "Site Key"
+         ],
+         "Add your reCAPTCHA Site Key here.": [
+            "Füge deinen reCAPTCHA Site Key hinzu."
+         ],
+         "Secret": [
+            "Secret"
+         ],
+         "Add your reCAPTCHA Secret here.": [
+            "Füge dein reCAPTCHA Secret hinzu."
+         ],
+         "Language": [
+            "Sprache"
+         ],
+         "Add your language here. For example, ‘en’ for English or ‘de’ for German.": [
+            "Füge deinen Sprachcode hinzu. Zum Beispiel \"en\" für Englisch oder \"de\" für Deutsch."
+         ],
+         "reCAPTCHA is only available within the pro version of Passster.": [
+            "reCAPTCHA gibt es nur in der Pro-Version von Passster."
+         ],
+         "Get Passster Pro": [
+            "Hole dir Passster Pro"
+         ],
+         "Bit.ly": [
+            "Bit.ly"
+         ],
+         "Bit.ly Access Token": [
+            "Bit.ly Access Token"
+         ],
+         "Add your Bit.ly access token here.": [
+            "Füge deinen Bit.ly Token hier ein."
+         ],
+         "Bit.ly is only available within the pro version of Passster.": [
+            "Bit.ly ist nur in der Pro-Version von Passster verfügbar."
+         ],
+         "Form Labels & Description": [
+            "Formularbezeichnungen & Beschreibung"
+         ],
+         "Edit the text that’s used within the password form on this page. You can overwrite these settings individually per area/page.": [
+            "Bearbeite alle Texte die innerhalb deines Passwort-Formulars angezeigt werden. Du kannst diese ebenfalls je geschütztem Bereich und Seite überschreiben."
+         ],
+         "Error": [
+            "Fehlermeldung"
+         ],
+         "Edit the error message that appears if a user enters the wrong password.": [
+            "Bearbeite die angezeigte Fehlermeldung falls ein Besucher das falsche Passwort eingibt."
+         ],
+         "Generating Passwords": [
+            "Passwörter generieren"
+         ],
+         "Password length": [
+            "Passwort-Länge"
+         ],
+         "Set a default length for generated passwords.": [
+            "Setze eine Standardlänge für Passwörter."
+         ],
+         "Include uppercase characters": [
+            "Großbuchstaben in generierten Passwörtern"
+         ],
+         "Include uppercase characters in passwords.": [
+            "Großbuchstaben in generierten Passwörtern verwenden."
+         ],
+         "Generate passwords only with lowercase.": [
+            "Passwörter nur mit Kleinbuchstaben generieren."
+         ],
+         "Include numbers": [
+            "Zahlen in generierten Passwörtern"
+         ],
+         "Include numbers in passwords.": [
+            "Zahlen in generierten Passwörtern verwenden."
+         ],
+         "Generate passwords without numbers.": [
+            "Keine Zahlen in generierten Passwörtern verwenden."
+         ],
+         "No page selected": [
+            "Keine Seite ausgewählt"
+         ],
+         "Activate Global Protection": [
+            "Globalen Schutz aktivieren"
+         ],
+         "Global Password Protection is activated.": [
+            "Globaler Passwortschutz ist aktiv."
+         ],
+         "Global Password Protection is deactivated.": [
+            "Globaler Passwortschutz ist deaktiviert."
+         ],
+         "Select a Page": [
+            "Seite auswählen"
+         ],
+         "Visitors who still need to submit the correct password will be redirected to this page. Please follow the link below to set it up.": [
+            "Alle Besucher die sich noch nicht verifiziert haben werden zu dieser Seite weitergeleitet. Folge dem Link um das Passwort und weitere Einstellungen festzulegen."
+         ],
+         "Customize the Global Protection Page": [
+            "Passwortschutz und andere Einstellungen festlegen"
+         ],
+         "Exclude pages": [
+            "Seiten ausschließen"
+         ],
+         "Select pages that should not be affected by global protection. This can be useful for information about data privacy or terms of use pages.": [
+            "Wähle Seiten die nicht vom globalen Schutz betroffen sein sollen. Das kann z.B. für das Impressum oder die Datenschutzseite sinnvoll sein."
+         ],
+         "Migrate Settings": [
+            "Einstellungen migrieren"
+         ],
+         "Migrate all of your customizer settings and options within version 4 of Passster.": [
+            "Alle Einstellungen von Passster in Version 4 migrieren."
+         ],
+         "Migrate settings": [
+            "Einstellungen migrieren"
+         ],
+         "Settings migration successfully.": [
+            "Einstellungen erfolgreich migriert."
+         ],
+         "Export": [
+            "Export"
+         ],
+         "Export Settings": [
+            "Einstellungen exportieren"
+         ],
+         "Copy export data": [
+            "Exportdaten kopieren"
+         ],
+         "Import": [
+            "Import"
+         ],
+         "Paste in the JSON string you got from your export to import all settings for the plugin.": [
+            "Füge den JSON-Code den du vom Export erhalten hast hier ein und klicke \"Import\" um alle Einstellungen zu importieren."
+         ],
+         "Import Settings": [
+            "Einstellungen importieren"
+         ],
+         "Settings imported successfully.": [
+            "Einstellungen erfolgreich importiert."
+         ],
+         "Reset Plugin Data": [
+            "Plugin zurücksetzen"
+         ],
+         "By clicking the following button, you will reset all plugin settings. This can be useful if you want to import a new set of settings or you want a fresh start.": [
+            "Setze alle Einstellungen im Plugin zurück und beginne erneut mit der Konfiguration."
+         ],
+         "Reset Plugin Settings": [
+            "Plugin zurücksetzen"
+         ],
+         "Settings resetted successfully.": [
+            "Plugin erfolgreich zurückgesetzt."
+         ],
+         "Passster": [
+            "Passster"
+         ],
+         "Options": [
+            "Optionen"
+         ],
+         "Settings": [
+            "Einstellungen"
+         ],
+         "Add New Password List": [
+            "Neue Passwort Liste hinzufügen"
+         ],
+         "New Password List": [
+            "Neue Passwort Liste"
+         ],
+         "Edit Password List": [
+            "Passwort Liste bearbeiten"
+         ],
+         "View Password List": [
+            "Passwort Liste ansehen"
+         ],
+         "Password Lists": [
+            "Passwort Listen"
+         ],
+         "Search Password Lists": [
+            "Passwort Listen durchsuchen"
+         ],
+         "Parent Password List": [
+            "Eltern-Passwort Liste"
+         ],
+         "No Password Lists found.": [
+            "Keine Passwort Listen gefunden."
+         ],
+         "No Password Lists found in Trash.": [
+            "Keine Passwort Liste im Papierkorb gefunden."
+         ],
+         "Manageable password lists": [
+            "Steuerbare Passwort Listen"
+         ],
+         "Add New Protected Area": [
+            "Geschützten Bereich hinzufügen"
+         ],
+         "New Protected Area": [
+            "Neuer geschützter Bereich"
+         ],
+         "Edit Protected Area": [
+            "Geschützten Bereich bearbeiten"
+         ],
+         "View Protected Area": [
+            "Geschützten Bereich ansehen"
+         ],
+         "Protected Areas": [
+            "Geschützte Bereiche"
+         ],
+         "Search Protected Areas": [
+            "Geschützten Bereich suchen"
+         ],
+         "Parent Protected Area": [
+            "Eltern-Geschützter Bereich"
+         ],
+         "No Protected Areas found.": [
+            "Keinen geschützten Bereich gefunden."
+         ],
+         "No Protected Areas found in Trash.": [
+            "Keinen geschützten Bereich im Papierkorb gefunden."
+         ],
+         "Manageable protected areas": [
+            "Steuerbare geschützte Bereiche"
+         ],
+         "Expiration": [
+            "Ablauf"
+         ],
+         "On": [
+            "An"
+         ],
+         "Shortcode": [
+            "Shortcode"
+         ],
+         "Protection Type": [
+            "Typ"
+         ],
+         "User/User-Role": [
+            "Nutzer/Nutzerrolle"
+         ],
+         "ReCaptcha": [
+            "ReCaptcha"
+         ],
+         "You reached the limit of concurrent logins. Please logout on one of the devices.": [
+            "Du hast das Limit an gleichzeitigen Logins erreicht. Bitte logge dich auf einem der Geräte aus bevor du dich erneut einloggen kannst."
+         ],
+         "Logout": [
+            "Ausloggen"
+         ],
+         "Overwrite Protection": [
+            "Passwortschutz überschreiben"
+         ],
+         "https://patrickposner.dev": [
+            "https://patrickposner.dev"
+         ],
+         "A simple plugin to password-protect your complete website, some pages/posts or just parts of your content.": [
+            "Ein einfaches Plugin um deine Seite, einzelne Unterseiten oder Teilbereiche deiner Seite mit einem Passwort zu schützen."
+         ],
+         "Patrick Posner": [
+            "Patrick Posner"
+         ],
+         "post type general name\u0004Password Lists": [
+            "Passwort Listen"
+         ],
+         "post type general name\u0004Protected Areas": [
+            "Geschützte Bereiche"
+         ],
+         "post type singular name\u0004Password List": [
+            "Passwort Liste"
+         ],
+         "post type singular name\u0004Protected Area": [
+            "Geschützter Bereich"
+         ],
+         "admin menu\u0004Password Lists": [
+            "Passwort Listen"
+         ],
+         "admin menu\u0004Protected Areas": [
+            "Geschützte Bereiche"
+         ],
+         "add new on admin bar\u0004Password List": [
+            "Passwort Liste"
+         ],
+         "add new on admin bar\u0004Protected Area": [
+            "Geschützter Bereich"
+         ],
+         "content-protector\u0004Add New": [
+            "Neu hinzufügen"
+         ]
+      }
+   }
+}

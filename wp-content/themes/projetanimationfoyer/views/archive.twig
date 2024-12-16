@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+<h2>ARCHIVES</h2>
+{% block content %}
+    {% for post in posts %}
+    <h2>{{ post.title }}</h2>
+    <div>{{ post.content }}</div>
+{% endfor %}
+    {% endif %}
+{% endblock %}

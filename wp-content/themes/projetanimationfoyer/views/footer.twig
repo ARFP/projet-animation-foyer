@@ -1,0 +1,7 @@
+<footer class="crm__footer">
+	<div class="footer-area">
+		{% include 'parts/menu-secondaire.twig' with { items: menu_secondaire.get_items } %}
+		</div>
+
+		 {{ function('wp_footer') }}
+</footer>

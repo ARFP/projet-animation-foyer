@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">  
+    <title>Annuaire Bénévoles CRM</title>
+</head>
+
+<body>
+    <header>
+        <section class="benHeader">
+            <div class="title">
+                <h1>Annuaire des bénévoles du foyer</h1>
+            </div>
+            <div class="logo">
+                <image src="./assets/img/crm_logo.png" alt="logo du CRM";>
+            </div>
+        </section>
+    </header>
+    <main id="app">         
+        <section class="admin">
+            <button class="adminLog" @click="adminPortal()">Admin</button>
+        </section>  
+        <section class="management">
+            <div class="listeNom" >   
+            <select @change="filterBenevole"  classe="liste">
+                <option class="optionText" value="0"><p class="white">Selectionnez un bénévole</p></option>
+                <option class="optionText" v-for="(benevole, index) in listeBenevolesFiltered" :key="index" :value="benevole.id">{{ benevole.prenom }} {{ benevole.nom }}</option>
+            </select>
+            </div> 
+            <div class="listePoste">
+                <select @change="filterResponsable" classe="listeRes">
+                    <option class="optionText" value="0"><p class="white">Selectionnez un responsable</p></option>
+                    <option class="optionText"  v-for="(benevole, index) in listeResponsables" :key="index" :value="benevole.id">{{ benevole.poste }}</option>
+                </select>
+            </div>
+        </section> 
+        <section class="benevoleTab">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th> 
+                    <th></th>                  
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="benevole of listeBenevolesFiltered">
+                    <td>{{ benevole.prenom }}</td>
+                    <td>{{ benevole.nom }}</td>
+                    <td><button :data-id="benevole.id" @click="openModal" class="btn">Info &#9993</button></td>                           
+                </tr>
+            </tbody>
+        </table>
+        </section>
+        
+        <div id="modal" ref="modal">
+            <article v-if="selectedBenevole != null">
+                <button id="btnModal"  @click="closeModal">Fermer</button>
+                <header>
+                    <p>{{ selectedBenevole.prenom }}</p>                   
+                    <p>{{ selectedBenevole.nom }}</p>
+                    <p>{{ selectedBenevole.telephone }}</p>
+                    <p>{{ selectedBenevole.poste }}</p>
+                </header>
+            </article>          
+        </div>  
+         
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+</body>
+</html>
